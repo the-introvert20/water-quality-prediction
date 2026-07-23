@@ -1,59 +1,66 @@
-# AI Water Quality Predictor
 
-A Streamlit application that estimates drinking-water potability from common water-quality measurements. It includes interactive single predictions, dataset exploration, batch CSV predictions, downloadable reports, and four trained classification models.
+# 💧 AI Water Quality Predictor
 
-> This project is an educational prediction tool. It does not replace laboratory testing, local regulations, or professional public-health advice.
+A beautiful Streamlit application that estimates drinking-water potability from common water-quality measurements. It includes interactive single predictions, dataset exploration, batch CSV predictions, downloadable reports, and four trained classification models.
 
-## Features
+⚠️ **Important Notice**: This project is an educational prediction tool. It does not replace laboratory testing, local regulations, or professional public-health advice.
 
-- Manual prediction from nine water-quality parameters
-- Safe, unsafe, and random example inputs
-- Random Forest, XGBoost, Decision Tree, and Logistic Regression models
-- Median imputation and standardized input preprocessing
-- Dataset explorer with summaries, distributions, and correlations
-- Batch CSV prediction and download
-- Rule-based pH, turbidity, chloramine, and sulfate warnings
-- Downloadable single-prediction reports
+---
 
-## Requirements
+## ✨ Features
 
+- 🎯 **Manual Prediction**: Enter nine water-quality parameters to predict potability
+- 🎲 **Example Inputs**: Load safe, unsafe, or random dataset samples
+- 🤖 **Multiple ML Models**: Random Forest, XGBoost, Decision Tree, Logistic Regression
+- 🛠️ **Smart Preprocessing**: Median imputation and standardized scaling
+- 📊 **Dataset Explorer**: View summaries, distributions, and correlation heatmaps
+- 📈 **Batch Prediction**: Upload a CSV for bulk predictions and download results
+- 🚨 **Rule-Based Warnings**: WHO/EPA guideline alerts for pH, turbidity, chloramines, and sulfate
+- 📥 **Downloadable Reports**: Save single prediction reports to text files
+
+---
+
+## 🚀 Quick Start
+
+### Prerequisites
 - Python 3.10 or later
-- A dataset at `dataset/water_potability.csv`
+- Git (optional)
 
-Install the dependencies:
+### Step 1: Navigate to the project
+```powershell
+cd "x:\water quality prediction\water-quality-prediction"
+```
 
-```bash
+### Step 2: Install dependencies
+```powershell
 python -m venv venv
-venv\Scripts\activate       # Windows PowerShell / Command Prompt
+
+# For Windows PowerShell
+.\venv\Scripts\activate
+
+# For macOS/Linux
+source venv/bin/activate
+
 pip install -r requirements.txt
 ```
 
-On macOS or Linux, activate the environment with:
-
+### Step 3: Run the app
 ```bash
-source venv/bin/activate
+python -m streamlit run app.py
 ```
 
-## Run the app
+Open your browser and go to **http://localhost:8501** to start using the app!
 
-Trained model files are already expected in `models/`. Start the web app with:
+---
 
-```bash
-streamlit run app.py
-```
+## 🔄 Train/Retrain Models
 
-Open the local address Streamlit prints in the terminal, usually `http://localhost:8501`.
-
-## Train or retrain the models
-
-If the `models/` folder is missing, or you replace the dataset, run:
-
+If the `models/` folder is missing or you've updated your dataset:
 ```bash
 python train_model.py
 ```
 
-The script creates the following artifacts in `models/`:
-
+This creates the following in `models/`:
 - `Random_Forest.pkl`
 - `XGBoost.pkl`
 - `Decision_Tree.pkl`
@@ -62,45 +69,58 @@ The script creates the following artifacts in `models/`:
 - `imputer.pkl`
 - `feature_names.pkl`
 
-## Input fields
+---
 
-The model uses these fields, in this order:
+## 📋 Input Parameters
 
-1. `ph`
-2. `Hardness`
-3. `Solids`
-4. `Chloramines`
-5. `Sulfate`
-6. `Conductivity`
-7. `Organic_carbon`
-8. `Trihalomethanes`
-9. `Turbidity`
+| # | Parameter | Description |
+|---|-----------|-------------|
+| 1 | ph | pH level (WHO recommended: 6.5-8.5) |
+| 2 | Hardness | Calcium and magnesium concentration |
+| 3 | Solids | Total dissolved solids (TDS) |
+| 4 | Chloramines | Chlorine and ammonia compound (EPA limit: 4 mg/L) |
+| 5 | Sulfate | Sulfate ion concentration (WHO limit: 250 mg/L) |
+| 6 | Conductivity | Electrical conductivity |
+| 7 | Organic_carbon | Total organic carbon |
+| 8 | Trihalomethanes | Disinfection byproducts |
+| 9 | Turbidity | Cloudiness of water (WHO limit: &lt;5 NTU) |
 
-Example buttons load their values directly into the number fields. The safe and unsafe examples are selected to match the current model's prediction; if the selected model has no matching dataset row, the app displays an explanatory message.
+---
 
-## Batch prediction CSV
+## 📁 Project Structure
 
-Upload a CSV containing all nine input columns listed above. Extra columns are allowed and are retained in the downloaded results. The app adds:
-
-- `Prediction`
-- `Confidence`
-- `Prob_UNSAFE`
-- `Prob_SAFE`
-
-Missing values in the required feature columns are filled using the median imputer saved during training.
-
-## Project structure
-
-```text
-app.py                       Streamlit interface
-train_model.py               Training and model export script
-dataset/water_potability.csv Training dataset
-models/                      Saved models and preprocessing artifacts
-requirements.txt             Python dependencies
-debug.py                     Diagnostic helper
-test_specific.py             Single-input model check
+```
+water-quality-prediction/
+├── app.py                          # Main Streamlit application
+├── train_model.py                  # Model training script
+├── requirements.txt                # Python dependencies
+├── dataset/
+│   └── water_potability.csv        # Training dataset
+├── models/                         # Saved ML models and artifacts
+├── debug.py                        # Diagnostic helper
+└── test_specific.py                # Single-input model checker
 ```
 
-## Notes
+---
 
-Potability predictions depend on the training dataset and are probabilistic. A result labelled `SAFE` means the selected model predicts class `1`; it is not a certification that the water is safe to drink. Always follow applicable water-testing standards and seek qualified advice for real-world decisions.
+## 📈 Batch Prediction
+
+Upload a CSV containing all 9 input parameters (extra columns allowed). The app adds these columns to your results:
+- `Prediction`: SAFE/UNSAFE
+- `Confidence`: Model confidence percentage
+- `Prob_UNSAFE`: Probability of unsafe water (%)
+- `Prob_SAFE`: Probability of safe water (%)
+
+Missing values are automatically filled using the trained median imputer.
+
+---
+
+## 📝 Notes
+
+Potability predictions depend on the training dataset and are probabilistic. A result labeled `SAFE` means the selected model predicts class `1` — it is not a certification that the water is safe to drink. Always follow applicable water-testing standards and seek qualified advice for real-world decisions.
+
+---
+
+## 📜 License
+
+Educational use only. No warranty provided.

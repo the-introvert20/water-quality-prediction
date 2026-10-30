@@ -1,12 +1,9 @@
 
-import joblib
 import pandas as pd
 
-# Load everything
-model = joblib.load('models/Random_Forest.pkl')
-scaler = joblib.load('models/scaler.pkl')
-imputer = joblib.load('models/imputer.pkl')
-feature_names = joblib.load('models/feature_names.pkl')
+from water_quality import CLASS_LABELS, FEATURES, load_pipeline, predict_frame
+
+pipeline = load_pipeline('Random_Forest')
 
 # The numbers from your screenshot!
 test_input = [
@@ -22,17 +19,13 @@ test_input = [
 ]
 
 # Create a DataFrame in correct order!
-df_test = pd.DataFrame([test_input], columns=feature_names)
+df_test = pd.DataFrame([test_input], columns=FEATURES)
 
-# Preprocess!
-df_imputed = imputer.transform(df_test)
-df_scaled = scaler.transform(df_imputed)
-
-# Predict
-pred = model.predict(df_scaled)
-proba = model.predict_proba(df_scaled)
+# Use raw measurements; preprocessing stays inside the fitted Pipeline.
+pred, proba, _ = predict_frame(pipeline, df_test)
 
 print("=== TEST RESULTS ===")
-print(f"Input values: {dict(zip(feature_names, test_input))}")
-print(f"\nPrediction class: {pred[0]} (1=SAFE, 0=UNSAFE)")
-print(f"Probabilities: UNSAFE = {proba[0][0]:.2%}, SAFE = {proba[0][1]:.2%}")
+print(f"Input values: {dict(zip(FEATURES, test_input))}")
+print(f"\nPrediction class: {CLASS_LABELS[int(pred[0])]}")
+if proba is not None:
+    print(f"Probabilities: Not Potable = {proba[0][0]:.2%}, Potable = {proba[0][1]:.2%}")

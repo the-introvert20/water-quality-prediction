@@ -1,8 +1,7 @@
 import pandas as pd
-import numpy as np
-import joblib
 import os
-from sklearn.metrics import confusion_matrix, classification_report, accuracy_score
+
+from water_quality import CLASS_LABELS, FEATURES, load_pipeline, predict_frame
 
 def main():
     print("="*80)
@@ -27,14 +26,14 @@ def main():
         print("\nMissing values per column:")
         print(df.isna().sum())
         
-        # Show sample safe and unsafe rows
-        print("\nSample of SAFE water (Potability=1):")
-        safe_samples = df[df['Potability'] == 1].dropna().head(3)
-        print(safe_samples)
+        # Show samples of both recorded target classes
+        print("\nSample of Potable water (Potability=1):")
+        potable_samples = df[df['Potability'] == 1].dropna().head(3)
+        print(potable_samples)
         
-        print("\nSample of UNSAFE water (Potability=0):")
-        unsafe_samples = df[df['Potability'] == 0].dropna().head(3)
-        print(unsafe_samples)
+        print("\nSample of Not Potable water (Potability=0):")
+        not_potable_samples = df[df['Potability'] == 0].dropna().head(3)
+        print(not_potable_samples)
         
     else:
         print("Dataset not found!")
@@ -49,24 +48,23 @@ def main():
         
         # Try to load Random Forest
         try:
-            model = joblib.load(f'{model_dir}/Random_Forest.pkl')
-            scaler = joblib.load(f'{model_dir}/scaler.pkl')
-            feature_names = joblib.load(f'{model_dir}/feature_names.pkl')
-            print("\nModel loaded successfully!")
-            print("Feature names:", feature_names.tolist())
+            pipeline = load_pipeline('Random_Forest')
+            print("\nFitted Pipeline loaded successfully!")
+            print("Feature names:", FEATURES)
             
-            # Test with safe sample
-            if not safe_samples.empty:
-                sample = safe_samples.iloc[0][feature_names]
-                print("\nTesting with safe sample:")
-                print(sample.to_dict())
-                sample_scaled = scaler.transform([sample.values])
-                pred = model.predict(sample_scaled)
-                pred_proba = model.predict_proba(sample_scaled)
-                print("Prediction:", pred[0], "Probabilities:", pred_proba[0])
+            # Use raw measurements; preprocessing stays inside the fitted Pipeline.
+            if not potable_samples.empty:
+                sample = potable_samples.iloc[[0]][FEATURES]
+                print("\nTesting with recorded Potable sample:")
+                print(sample.iloc[0].to_dict())
+                pred, pred_proba, _ = predict_frame(pipeline, sample)
+                print("Prediction:", CLASS_LABELS[int(pred[0])])
+                if pred_proba is not None:
+                    print(f"Probabilities: Not Potable = {pred_proba[0][0]:.2%}, "
+                          f"Potable = {pred_proba[0][1]:.2%}")
                 
         except Exception as e:
-            print("Error loading model:", e)
+            print("Error loading Pipeline or predicting:", e)
     else:
         print("Models directory not found!")
 

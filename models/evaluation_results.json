@@ -1,0 +1,202 @@
+{
+  "Random_Forest": {
+    "cv_accuracy_mean": 0.6583969465648856,
+    "cv_accuracy_std": 0.00827461198041173,
+    "cv_macro_f1_mean": 0.6274699755322202,
+    "cv_macro_f1_std": 0.012277912190133747,
+    "cv_weighted_f1_mean": 0.6510039738664576,
+    "cv_weighted_f1_std": 0.010037953105555024,
+    "train_accuracy_mean": 0.9505725190839694,
+    "train_accuracy_std": 0.007022278432432857,
+    "test_accuracy": 0.6570121951219512,
+    "test_macro_f1": 0.6245106045226629,
+    "test_weighted_f1": 0.6487604959542562,
+    "test_precision_class_0": 0.6948775055679287,
+    "test_precision_class_1": 0.5748792270531401,
+    "test_recall_class_0": 0.78,
+    "test_recall_class_1": 0.46484375,
+    "test_f1_class_0": 0.734982332155477,
+    "test_f1_class_1": 0.5140388768898488,
+    "confusion_matrix": [
+      [
+        312,
+        88
+      ],
+      [
+        137,
+        119
+      ]
+    ],
+    "confusion_matrix_labels": {
+      "rows": "actual",
+      "columns": "predicted",
+      "class_0": "Not Potable",
+      "class_1": "Potable"
+    },
+    "actual_not_potable_pred_not_potable": 312,
+    "actual_not_potable_pred_potable": 88,
+    "actual_potable_pred_not_potable": 137,
+    "actual_potable_pred_potable": 119,
+    "model_name": "Random_Forest"
+  },
+  "XGBoost": {
+    "cv_accuracy_mean": 0.6312977099236641,
+    "cv_accuracy_std": 0.009302334051109864,
+    "cv_macro_f1_mean": 0.6005115955491788,
+    "cv_macro_f1_std": 0.015334195996513231,
+    "cv_weighted_f1_mean": 0.6247381562038767,
+    "cv_weighted_f1_std": 0.012115108036869104,
+    "train_accuracy_mean": 1.0,
+    "train_accuracy_std": 0.0,
+    "test_accuracy": 0.6173780487804879,
+    "test_macro_f1": 0.582742673238473,
+    "test_weighted_f1": 0.6091315307942937,
+    "test_precision_class_0": 0.6674157303370787,
+    "test_precision_class_1": 0.5118483412322274,
+    "test_recall_class_0": 0.7425,
+    "test_recall_class_1": 0.421875,
+    "test_f1_class_0": 0.7029585798816568,
+    "test_f1_class_1": 0.4625267665952891,
+    "confusion_matrix": [
+      [
+        297,
+        103
+      ],
+      [
+        148,
+        108
+      ]
+    ],
+    "confusion_matrix_labels": {
+      "rows": "actual",
+      "columns": "predicted",
+      "class_0": "Not Potable",
+      "class_1": "Potable"
+    },
+    "actual_not_potable_pred_not_potable": 297,
+    "actual_not_potable_pred_potable": 103,
+    "actual_potable_pred_not_potable": 148,
+    "actual_potable_pred_potable": 108,
+    "model_name": "XGBoost"
+  },
+  "Decision_Tree": {
+    "cv_accuracy_mean": 0.6076335877862595,
+    "cv_accuracy_std": 0.03148797131090511,
+    "cv_macro_f1_mean": 0.5835697812878792,
+    "cv_macro_f1_std": 0.033206388770439244,
+    "cv_weighted_f1_mean": 0.6054532709250504,
+    "cv_weighted_f1_std": 0.03153558712428025,
+    "train_accuracy_mean": 0.7766221374045801,
+    "train_accuracy_std": 0.056974838467539285,
+    "test_accuracy": 0.6067073170731707,
+    "test_macro_f1": 0.5655093804873541,
+    "test_weighted_f1": 0.5948782065683323,
+    "test_precision_class_0": 0.6550218340611353,
+    "test_precision_class_1": 0.494949494949495,
+    "test_recall_class_0": 0.75,
+    "test_recall_class_1": 0.3828125,
+    "test_f1_class_0": 0.6993006993006993,
+    "test_f1_class_1": 0.43171806167400884,
+    "confusion_matrix": [
+      [
+        300,
+        100
+      ],
+      [
+        158,
+        98
+      ]
+    ],
+    "confusion_matrix_labels": {
+      "rows": "actual",
+      "columns": "predicted",
+      "class_0": "Not Potable",
+      "class_1": "Potable"
+    },
+    "actual_not_potable_pred_not_potable": 300,
+    "actual_not_potable_pred_potable": 100,
+    "actual_potable_pred_not_potable": 158,
+    "actual_potable_pred_potable": 98,
+    "model_name": "Decision_Tree"
+  },
+  "Logistic_Regression": {
+    "cv_accuracy_mean": 0.49465648854961836,
+    "cv_accuracy_std": 0.01612115426102511,
+    "cv_macro_f1_mean": 0.48490719150616,
+    "cv_macro_f1_std": 0.01734624852289197,
+    "cv_weighted_f1_mean": 0.5001451804693025,
+    "cv_weighted_f1_std": 0.01596561475622179,
+    "train_accuracy_mean": 0.5154580152671755,
+    "train_accuracy_std": 0.0034218360834047633,
+    "test_accuracy": 0.524390243902439,
+    "test_macro_f1": 0.5185909980430528,
+    "test_weighted_f1": 0.5301894897618252,
+    "test_precision_class_0": 0.6341463414634146,
+    "test_precision_class_1": 0.4146341463414634,
+    "test_recall_class_0": 0.52,
+    "test_recall_class_1": 0.53125,
+    "test_f1_class_0": 0.5714285714285714,
+    "test_f1_class_1": 0.4657534246575342,
+    "confusion_matrix": [
+      [
+        208,
+        192
+      ],
+      [
+        120,
+        136
+      ]
+    ],
+    "confusion_matrix_labels": {
+      "rows": "actual",
+      "columns": "predicted",
+      "class_0": "Not Potable",
+      "class_1": "Potable"
+    },
+    "actual_not_potable_pred_not_potable": 208,
+    "actual_not_potable_pred_potable": 192,
+    "actual_potable_pred_not_potable": 120,
+    "actual_potable_pred_potable": 136,
+    "model_name": "Logistic_Regression"
+  },
+  "Baseline_Majority": {
+    "cv_accuracy_mean": 0.6099236641221374,
+    "cv_accuracy_std": 0.0009349197491538728,
+    "cv_macro_f1_mean": 0.3788523272222316,
+    "cv_macro_f1_std": 0.0003608002971834775,
+    "cv_weighted_f1_mean": 0.46214267379981167,
+    "cv_weighted_f1_std": 0.0011482389039407632,
+    "train_accuracy_mean": 0.6099236641221374,
+    "train_accuracy_std": 0.00023372993728850897,
+    "test_accuracy": 0.6097560975609756,
+    "test_macro_f1": 0.3787878787878788,
+    "test_weighted_f1": 0.4619364375461936,
+    "test_precision_class_0": 0.6097560975609756,
+    "test_precision_class_1": 0.0,
+    "test_recall_class_0": 1.0,
+    "test_recall_class_1": 0.0,
+    "test_f1_class_0": 0.7575757575757576,
+    "test_f1_class_1": 0.0,
+    "confusion_matrix": [
+      [
+        400,
+        0
+      ],
+      [
+        256,
+        0
+      ]
+    ],
+    "confusion_matrix_labels": {
+      "rows": "actual",
+      "columns": "predicted",
+      "class_0": "Not Potable",
+      "class_1": "Potable"
+    },
+    "actual_not_potable_pred_not_potable": 400,
+    "actual_not_potable_pred_potable": 0,
+    "actual_potable_pred_not_potable": 256,
+    "actual_potable_pred_potable": 0,
+    "model_name": "Baseline_Majority"
+  }
+}

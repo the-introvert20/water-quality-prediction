@@ -10,7 +10,8 @@ from sklearn.pipeline import Pipeline
 from sklearn.utils.validation import check_is_fitted
 from train_model import treat_zero_ph_as_missing
 
-EXPECTED_MODELS = ['Random_Forest', 'XGBoost', 'Decision_Tree', 'Logistic_Regression']
+EXPECTED_MODELS = ['Random_Forest', 'SVC', 'Extra_Trees', 'Soft_Voting_RF_SVC',
+                   'XGBoost', 'Decision_Tree', 'Logistic_Regression']
 EXPECTED_STEPS = ['imputer', 'scaler', 'classifier']
 EXPECTED_FEATURES = [
     'ph', 'Hardness', 'Solids', 'Chloramines', 'Sulfate',
@@ -76,7 +77,7 @@ for model_name in EXPECTED_MODELS:
 
 record(
     all(name in pipelines for name in EXPECTED_MODELS),
-    "All four saved model files loaded",
+    f"All {len(EXPECTED_MODELS)} saved model files loaded",
     f"Missing models: {[name for name in EXPECTED_MODELS if name not in pipelines]}",
 )
 

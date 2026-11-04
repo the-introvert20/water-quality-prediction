@@ -13,7 +13,7 @@ from streamlit.testing.v1 import AppTest
 
 from water_quality import (
     BASE_DIR, CLASS_LABELS, DISCLAIMER, FEATURES, FIELD_SPECS, MODEL_NAMES,
-    batch_results, load_pipeline, predict_frame, prediction_report, read_batch_csv,
+    batch_results, decision_threshold, load_pipeline, predict_frame, prediction_report, read_batch_csv,
     validate_features, reference_checks,
 )
 
@@ -180,13 +180,31 @@ class InterfaceTests(unittest.TestCase):
         self.assertFalse(self.app.exception)
 
     def test_all_views_and_charts(self):
+        # The default (CV-selected) model may have no native feature importances, so it shows 3 charts.
         for view, minimum_charts in [('Overview', 1), ('Dataset Explorer', 4),
-                                      ('Model Performance', 4), ('Training & Methodology', 0),
+                                      ('Model Performance', 3), ('Training & Methodology', 0),
                                       ('Batch Analysis', 0), ('Water Prediction', 0)]:
             with self.subTest(view=view):
                 self.navigate(view)
                 self.assertGreaterEqual(len(self.app.get('plotly_chart')), minimum_charts)
                 self.assertTrue(any(DISCLAIMER in item.value for item in list(self.app.info) + list(self.app.warning)))
+
+    def test_feature_importance_chart_depends_on_model_type(self):
+        self.navigate('Model Performance')
+        for model, charts in [('Random_Forest', 4), ('SVC', 3), ('Soft_Voting_RF_SVC', 3), ('Logistic_Regression', 4)]:
+            with self.subTest(model=model):
+                self.app.selectbox(key='selected_model').set_value(model).run()
+                self.assertFalse(self.app.exception)
+                self.assertEqual(len(self.app.get('plotly_chart')), charts)
+
+    def test_threshold_rule_is_disclosed_and_applied_in_predictions(self):
+        self.navigate('Water Prediction')
+        self.app.selectbox(key='selected_model').set_value('Random_Forest').run()
+        self.click('Estimate potability')
+        captions = ' '.join(item.value for item in self.app.caption)
+        self.assertIn('Decision rule: Potable is predicted only if P(Potable)', captions)
+        result = self.app.session_state.manual_result
+        self.assertEqual(result['prediction'], int(result['probabilities'][1] >= decision_threshold(load_pipeline('Random_Forest'))))
 
     def test_manual_prediction_and_report_persist(self):
         self.navigate('Water Prediction')

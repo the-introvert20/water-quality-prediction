@@ -1,0 +1,194 @@
+================================================================================
+WATER QUALITY PREDICTION - MODEL EVALUATION REPORT
+Generated: 2026-10-30 16:32:21
+================================================================================
+
+TRAINING CONFIGURATION:
+  - Dataset: dataset/water_potability.csv
+  - Features: 9 (ph, Hardness, Solids, Chloramines, Sulfate, Conductivity,
+              Organic_carbon, Trihalomethanes, Turbidity)
+  - Target: Potability (0=Not Potable, 1=Potable)
+  - Train/Test Split: 80/20 (stratified, random_state=42)
+  - Cross-Validation: 5-fold stratified (shuffle=True, random_state=42)
+  - Preprocessing Pipeline: MedianImputer → StandardScaler → Classifier
+  - Preprocessing: fitted independently in each training fold
+  - Limitation: XGBoost class ratio uses full-dataset target counts
+  - pH=0 Handling: Converted to missing (in memory, CSV unchanged)
+
+BEST MODEL (by CV Macro F1): Random_Forest
+  CV Macro F1: 0.6275
+
+================================================================================
+MODEL: Random_Forest
+================================================================================
+
+Cross-Validation Results:
+  Accuracy:    0.6584 ± 0.0083
+  Macro F1:    0.6275 ± 0.0123
+  Weighted F1: 0.6510 ± 0.0100
+  Train Acc:   0.9506 ± 0.0070
+  Overfit Gap: 0.2922
+
+Test Set Results:
+  Accuracy:    0.6570
+  Macro F1:    0.6245
+  Weighted F1: 0.6488
+
+Per-Class Performance (Test Set):
+  Class 0 (Not Potable):
+    Precision: 0.6949
+    Recall:    0.7800
+    F1-Score:  0.7350
+
+  Class 1 (Potable):
+    Precision: 0.5749
+    Recall:    0.4648
+    F1-Score:  0.5140
+
+Confusion Matrix (rows=actual, cols=predicted):
+  Label 0 = Not Potable, Label 1 = Potable
+                       Pred Not Potable (0)  Pred Potable (1)
+  Actual Not Potable (0)             312                88
+  Actual Potable (1)                 137               119
+
+================================================================================
+MODEL: XGBoost
+================================================================================
+
+Cross-Validation Results:
+  Accuracy:    0.6313 ± 0.0093
+  Macro F1:    0.6005 ± 0.0153
+  Weighted F1: 0.6247 ± 0.0121
+  Train Acc:   1.0000 ± 0.0000
+  Overfit Gap: 0.3687
+
+Test Set Results:
+  Accuracy:    0.6174
+  Macro F1:    0.5827
+  Weighted F1: 0.6091
+
+Per-Class Performance (Test Set):
+  Class 0 (Not Potable):
+    Precision: 0.6674
+    Recall:    0.7425
+    F1-Score:  0.7030
+
+  Class 1 (Potable):
+    Precision: 0.5118
+    Recall:    0.4219
+    F1-Score:  0.4625
+
+Confusion Matrix (rows=actual, cols=predicted):
+  Label 0 = Not Potable, Label 1 = Potable
+                       Pred Not Potable (0)  Pred Potable (1)
+  Actual Not Potable (0)             297               103
+  Actual Potable (1)                 148               108
+
+================================================================================
+MODEL: Decision_Tree
+================================================================================
+
+Cross-Validation Results:
+  Accuracy:    0.6076 ± 0.0315
+  Macro F1:    0.5836 ± 0.0332
+  Weighted F1: 0.6055 ± 0.0315
+  Train Acc:   0.7766 ± 0.0570
+  Overfit Gap: 0.1690
+
+Test Set Results:
+  Accuracy:    0.6067
+  Macro F1:    0.5655
+  Weighted F1: 0.5949
+
+Per-Class Performance (Test Set):
+  Class 0 (Not Potable):
+    Precision: 0.6550
+    Recall:    0.7500
+    F1-Score:  0.6993
+
+  Class 1 (Potable):
+    Precision: 0.4949
+    Recall:    0.3828
+    F1-Score:  0.4317
+
+Confusion Matrix (rows=actual, cols=predicted):
+  Label 0 = Not Potable, Label 1 = Potable
+                       Pred Not Potable (0)  Pred Potable (1)
+  Actual Not Potable (0)             300               100
+  Actual Potable (1)                 158                98
+
+================================================================================
+MODEL: Logistic_Regression
+================================================================================
+
+Cross-Validation Results:
+  Accuracy:    0.4947 ± 0.0161
+  Macro F1:    0.4849 ± 0.0173
+  Weighted F1: 0.5001 ± 0.0160
+  Train Acc:   0.5155 ± 0.0034
+  Overfit Gap: 0.0208
+
+Test Set Results:
+  Accuracy:    0.5244
+  Macro F1:    0.5186
+  Weighted F1: 0.5302
+
+Per-Class Performance (Test Set):
+  Class 0 (Not Potable):
+    Precision: 0.6341
+    Recall:    0.5200
+    F1-Score:  0.5714
+
+  Class 1 (Potable):
+    Precision: 0.4146
+    Recall:    0.5312
+    F1-Score:  0.4658
+
+Confusion Matrix (rows=actual, cols=predicted):
+  Label 0 = Not Potable, Label 1 = Potable
+                       Pred Not Potable (0)  Pred Potable (1)
+  Actual Not Potable (0)             208               192
+  Actual Potable (1)                 120               136
+
+================================================================================
+MODEL: Baseline_Majority
+================================================================================
+
+Cross-Validation Results:
+  Accuracy:    0.6099 ± 0.0009
+  Macro F1:    0.3789 ± 0.0004
+  Weighted F1: 0.4621 ± 0.0011
+  Train Acc:   0.6099 ± 0.0002
+  Overfit Gap: 0.0000
+
+Test Set Results:
+  Accuracy:    0.6098
+  Macro F1:    0.3788
+  Weighted F1: 0.4619
+
+Per-Class Performance (Test Set):
+  Class 0 (Not Potable):
+    Precision: 0.6098
+    Recall:    1.0000
+    F1-Score:  0.7576
+
+  Class 1 (Potable):
+    Precision: 0.0000
+    Recall:    0.0000
+    F1-Score:  0.0000
+
+Confusion Matrix (rows=actual, cols=predicted):
+  Label 0 = Not Potable, Label 1 = Potable
+                       Pred Not Potable (0)  Pred Potable (1)
+  Actual Not Potable (0)             400                 0
+  Actual Potable (1)                 256                 0
+
+================================================================================
+IMPORTANT NOTES:
+================================================================================
+1. Model predictions are for educational purposes only
+2. DO NOT use as sole certification for drinking water safety
+3. Always follow official water quality testing standards (EPA, WHO)
+4. Large train-validation gaps indicate potential overfitting
+5. Macro F1 is preferred metric for imbalanced classification
+6. All preprocessing is embedded in saved pipelines

@@ -1,25 +1,25 @@
 [theme]
 base = "light"
 primaryColor = "#087E8B"
-backgroundColor = "#F7FAFB"
+backgroundColor = "#F8FAFC"
 secondaryBackgroundColor = "#EDF3F5"
-textColor = "#132E40"
+textColor = "#0F172A"
 linkColor = "#087E8B"
-borderColor = "#D9E4E9"
+borderColor = "#E2E8F0"
 showWidgetBorder = true
 showSidebarBorder = false
 baseRadius = "6px"
 buttonRadius = "6px"
 font = "sans-serif"
 baseFontSize = 16
-headingFontSizes = ["36px", "28px", "21px", "18px", "16px", "16px"]
-headingFontWeights = [650, 650, 600, 600, 600, 600]
+headingFontSizes = ["32px", "24px", "19px", "16px", "14px", "14px"]
+headingFontWeights = [700, 700, 600, 600, 600, 600]
 chartCategoricalColors = ["#29485D", "#08949C", "#6C8797", "#C28B45"]
-dataframeHeaderBackgroundColor = "#EDF3F5"
+dataframeHeaderBackgroundColor = "#F1F5F9"
 
 [theme.sidebar]
-backgroundColor = "#102D3D"
-secondaryBackgroundColor = "#1D4052"
-textColor = "#F1F7FA"
-primaryColor = "#56CFD0"
-borderColor = "#345466"
+backgroundColor = "#0F2537"
+secondaryBackgroundColor = "#16364D"
+textColor = "#E6F0F5"
+primaryColor = "#087E8B"
+borderColor = "#1D3B50"

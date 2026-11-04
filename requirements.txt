@@ -1,6 +1,8 @@
 pandas
 numpy
-scikit-learn
+scipy
+# SVC(probability=True), used for threshold selection, is removed in scikit-learn 1.11.
+scikit-learn<1.11
 xgboost
 streamlit
 matplotlib

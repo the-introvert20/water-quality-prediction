@@ -1,30 +1,205 @@
 {
   "Random_Forest": {
-    "cv_accuracy_mean": 0.6583969465648856,
-    "cv_accuracy_std": 0.00827461198041173,
-    "cv_macro_f1_mean": 0.6274699755322202,
-    "cv_macro_f1_std": 0.012277912190133747,
-    "cv_weighted_f1_mean": 0.6510039738664576,
-    "cv_weighted_f1_std": 0.010037953105555024,
-    "train_accuracy_mean": 0.9505725190839694,
-    "train_accuracy_std": 0.007022278432432857,
-    "test_accuracy": 0.6570121951219512,
-    "test_macro_f1": 0.6245106045226629,
-    "test_weighted_f1": 0.6487604959542562,
-    "test_precision_class_0": 0.6948775055679287,
-    "test_precision_class_1": 0.5748792270531401,
-    "test_recall_class_0": 0.78,
-    "test_recall_class_1": 0.46484375,
-    "test_f1_class_0": 0.734982332155477,
-    "test_f1_class_1": 0.5140388768898488,
+    "cv_accuracy_mean": 0.6622137404580152,
+    "cv_accuracy_std": 0.004674598745769418,
+    "cv_macro_f1_mean": 0.6329631470218814,
+    "cv_macro_f1_std": 0.0096960939673109,
+    "cv_weighted_f1_mean": 0.6556524658445502,
+    "cv_weighted_f1_std": 0.00725233480251986,
+    "cv_precision_class_0_mean": 0.7032528109707993,
+    "cv_precision_class_0_std": 0.009747369945318744,
+    "cv_precision_class_1_mean": 0.5795341527818538,
+    "cv_precision_class_1_std": 0.006233766880481034,
+    "cv_recall_class_0_mean": 0.7728389498432601,
+    "cv_recall_class_0_std": 0.018845067687437534,
+    "cv_recall_class_1_mean": 0.4892252510760402,
+    "cv_recall_class_1_std": 0.036055317061047754,
+    "cv_f1_class_0_mean": 0.7361514286556083,
+    "cv_f1_class_0_std": 0.004435344367393921,
+    "cv_f1_class_1_mean": 0.5297748653881542,
+    "cv_f1_class_1_std": 0.021330165298679957,
+    "train_accuracy_mean": 0.9741412213740457,
+    "train_accuracy_std": 0.02498907167471715,
+    "cv_macro_f1_folds": [
+      0.641620678269893,
+      0.6341110430620516,
+      0.6187386947950329,
+      0.6447042319382745,
+      0.6256410870441547
+    ],
+    "cv_accuracy_folds": [
+      0.6679389312977099,
+      0.6583969465648855,
+      0.6583969465648855,
+      0.6679389312977099,
+      0.6583969465648855
+    ],
+    "cv_threshold_accuracy_mean": 0.6564885496183205,
+    "cv_threshold_accuracy_std": 0.012426580607709696,
+    "cv_threshold_macro_f1_mean": 0.5253017773752415,
+    "cv_threshold_macro_f1_std": 0.03442436025211588,
+    "cv_threshold_precision_1_mean": 0.7781515719705228,
+    "cv_threshold_precision_1_std": 0.04946551871245044,
+    "cv_threshold_recall_1_mean": 0.171324725011956,
+    "cv_threshold_recall_1_std": 0.051444979690446466,
+    "cv_threshold_recall_0_mean": 0.9668456112852665,
+    "cv_threshold_recall_0_std": 0.01772799400503057,
+    "cv_threshold_false_potable_mean": 10.6,
+    "cv_threshold_false_potable_std": 5.678027826631356,
+    "cv_threshold_n_predicted_potable_mean": 45.6,
+    "cv_threshold_n_predicted_potable_std": 15.67928569801571,
+    "cv_threshold_values": [
+      0.6,
+      0.6,
+      0.65,
+      0.65,
+      0.65
+    ],
+    "cv_threshold_target_met_folds": 5,
+    "cv_method": "nested stratified CV (outer folds), native decision rule",
+    "hyperparameters": {
+      "max_depth": 15,
+      "min_samples_leaf": 5
+    },
+    "decision_threshold": 0.6,
+    "decision_rule": "predict Potable only if P(Potable) >= 0.60",
+    "threshold_target_met": true,
+    "oof_threshold_precision_potable": 0.7210682492581603,
+    "oof_threshold_recall_potable": 0.23776908023483365,
+    "oof_threshold_n_predicted_potable": 337,
+    "oof_threshold_curve": [
+      {
+        "threshold": 0.3,
+        "n_predicted_potable": 2423,
+        "precision_potable": 0.4106479570780025,
+        "recall_potable": 0.9735812133072407,
+        "false_potable": 1428,
+        "false_not_potable": 27
+      },
+      {
+        "threshold": 0.35,
+        "n_predicted_potable": 2242,
+        "precision_potable": 0.4272970561998216,
+        "recall_potable": 0.9373776908023483,
+        "false_potable": 1284,
+        "false_not_potable": 64
+      },
+      {
+        "threshold": 0.4,
+        "n_predicted_potable": 1897,
+        "precision_potable": 0.44913020558777017,
+        "recall_potable": 0.8336594911937377,
+        "false_potable": 1045,
+        "false_not_potable": 170
+      },
+      {
+        "threshold": 0.45,
+        "n_predicted_potable": 1420,
+        "precision_potable": 0.5077464788732394,
+        "recall_potable": 0.7054794520547946,
+        "false_potable": 699,
+        "false_not_potable": 301
+      },
+      {
+        "threshold": 0.5,
+        "n_predicted_potable": 954,
+        "precision_potable": 0.5691823899371069,
+        "recall_potable": 0.5313111545988258,
+        "false_potable": 411,
+        "false_not_potable": 479
+      },
+      {
+        "threshold": 0.55,
+        "n_predicted_potable": 560,
+        "precision_potable": 0.6357142857142857,
+        "recall_potable": 0.34833659491193736,
+        "false_potable": 204,
+        "false_not_potable": 666
+      },
+      {
+        "threshold": 0.6,
+        "n_predicted_potable": 337,
+        "precision_potable": 0.7210682492581603,
+        "recall_potable": 0.23776908023483365,
+        "false_potable": 94,
+        "false_not_potable": 779
+      },
+      {
+        "threshold": 0.65,
+        "n_predicted_potable": 199,
+        "precision_potable": 0.7487437185929648,
+        "recall_potable": 0.14579256360078277,
+        "false_potable": 50,
+        "false_not_potable": 873
+      },
+      {
+        "threshold": 0.7,
+        "n_predicted_potable": 114,
+        "precision_potable": 0.8070175438596491,
+        "recall_potable": 0.09001956947162426,
+        "false_potable": 22,
+        "false_not_potable": 930
+      },
+      {
+        "threshold": 0.75,
+        "n_predicted_potable": 73,
+        "precision_potable": 0.8356164383561644,
+        "recall_potable": 0.05968688845401174,
+        "false_potable": 12,
+        "false_not_potable": 961
+      },
+      {
+        "threshold": 0.8,
+        "n_predicted_potable": 30,
+        "precision_potable": 0.8666666666666667,
+        "recall_potable": 0.025440313111545987,
+        "false_potable": 4,
+        "false_not_potable": 996
+      },
+      {
+        "threshold": 0.85,
+        "n_predicted_potable": 5,
+        "precision_potable": 0.8,
+        "recall_potable": 0.003913894324853229,
+        "false_potable": 1,
+        "false_not_potable": 1018
+      },
+      {
+        "threshold": 0.9,
+        "n_predicted_potable": 2,
+        "precision_potable": 1.0,
+        "recall_potable": 0.0019569471624266144,
+        "false_potable": 0,
+        "false_not_potable": 1020
+      }
+    ],
+    "test_accuracy": 0.6646341463414634,
+    "test_macro_f1": 0.5599141295862607,
+    "test_weighted_f1": 0.607038137126102,
+    "test_precision_class_0": 0.65625,
+    "test_precision_class_1": 0.725,
+    "test_recall_class_0": 0.945,
+    "test_recall_class_1": 0.2265625,
+    "test_f1_class_0": 0.7745901639344263,
+    "test_f1_class_1": 0.34523809523809523,
+    "test_accuracy_ci95": [
+      0.6276400015448793,
+      0.6997113600476603
+    ],
+    "test_precision_class_1_ci95": [
+      0.6185594127028217,
+      0.8108224286958273
+    ],
+    "test_n_predicted_potable": 80,
+    "test_false_potable_rate": 0.055,
     "confusion_matrix": [
       [
-        312,
-        88
+        378,
+        22
       ],
       [
-        137,
-        119
+        198,
+        58
       ]
     ],
     "confusion_matrix_labels": {
@@ -33,21 +208,905 @@
       "class_0": "Not Potable",
       "class_1": "Potable"
     },
-    "actual_not_potable_pred_not_potable": 312,
-    "actual_not_potable_pred_potable": 88,
-    "actual_potable_pred_not_potable": 137,
-    "actual_potable_pred_potable": 119,
+    "actual_not_potable_pred_not_potable": 378,
+    "actual_not_potable_pred_potable": 22,
+    "actual_potable_pred_not_potable": 198,
+    "actual_potable_pred_potable": 58,
+    "test_classification_report": "                 precision    recall  f1-score   support\n\n0 = Not Potable     0.6562    0.9450    0.7746       400\n    1 = Potable     0.7250    0.2266    0.3452       256\n\n       accuracy                         0.6646       656\n      macro avg     0.6906    0.5858    0.5599       656\n   weighted avg     0.6831    0.6646    0.6070       656\n",
+    "test_native_accuracy": 0.6570121951219512,
+    "test_native_macro_f1": 0.630733204740425,
+    "test_native_weighted_f1": 0.652357059682938,
+    "test_native_precision_class_0": 0.703016241299304,
+    "test_native_precision_class_1": 0.5688888888888889,
+    "test_native_recall_class_0": 0.7575,
+    "test_native_recall_class_1": 0.5,
+    "test_native_confusion_matrix": [
+      [
+        303,
+        97
+      ],
+      [
+        128,
+        128
+      ]
+    ],
     "model_name": "Random_Forest"
   },
+  "SVC": {
+    "cv_accuracy_mean": 0.6549618320610687,
+    "cv_accuracy_std": 0.005962022653363861,
+    "cv_macro_f1_mean": 0.6397438857625078,
+    "cv_macro_f1_std": 0.011102122397599818,
+    "cv_weighted_f1_mean": 0.6557526930460114,
+    "cv_weighted_f1_std": 0.007680561587746449,
+    "cv_precision_class_0_mean": 0.7254595831898848,
+    "cv_precision_class_0_std": 0.020206142127861003,
+    "cv_precision_class_1_mean": 0.5548743520753451,
+    "cv_precision_class_1_std": 0.003726978419040075,
+    "cv_recall_class_0_mean": 0.7014811912225705,
+    "cv_recall_class_0_std": 0.026986668439195997,
+    "cv_recall_class_1_mean": 0.5821233859397418,
+    "cv_recall_class_1_std": 0.055993925250449425,
+    "cv_f1_class_0_mean": 0.7124915213514104,
+    "cv_f1_class_0_std": 0.0053296212236745,
+    "cv_f1_class_1_mean": 0.5669962501736053,
+    "cv_f1_class_1_std": 0.026760350007549363,
+    "train_accuracy_mean": 0.7844465648854962,
+    "train_accuracy_std": 0.029209073563526176,
+    "cv_macro_f1_folds": [
+      0.6344378620681681,
+      0.6423235168780429,
+      0.6287294179258507,
+      0.6601375016214814,
+      0.6330911303189963
+    ],
+    "cv_accuracy_folds": [
+      0.6545801526717557,
+      0.6545801526717557,
+      0.648854961832061,
+      0.666030534351145,
+      0.6507633587786259
+    ],
+    "cv_threshold_accuracy_mean": 0.6538167938931299,
+    "cv_threshold_accuracy_std": 0.009473033317550289,
+    "cv_threshold_macro_f1_mean": 0.5258929441183712,
+    "cv_threshold_macro_f1_std": 0.02570307942398435,
+    "cv_threshold_precision_1_mean": 0.7405864691544007,
+    "cv_threshold_precision_1_std": 0.04170483577583968,
+    "cv_threshold_recall_1_mean": 0.17414155906264944,
+    "cv_threshold_recall_1_std": 0.037385307552136475,
+    "cv_threshold_recall_0_mean": 0.9605799373040751,
+    "cv_threshold_recall_0_std": 0.01227904597134449,
+    "cv_threshold_false_potable_mean": 12.6,
+    "cv_threshold_false_potable_std": 3.9293765408777004,
+    "cv_threshold_n_predicted_potable_mean": 48.2,
+    "cv_threshold_n_predicted_potable_std": 10.979981785048645,
+    "cv_threshold_values": [
+      0.6,
+      0.65,
+      0.65,
+      0.65,
+      0.6
+    ],
+    "cv_threshold_target_met_folds": 5,
+    "cv_method": "nested stratified CV (outer folds), native decision rule",
+    "hyperparameters": {
+      "C": 2,
+      "gamma": 0.1
+    },
+    "decision_threshold": 0.65,
+    "decision_rule": "predict Potable only if P(Potable) >= 0.65",
+    "threshold_target_met": true,
+    "oof_threshold_precision_potable": 0.7850467289719626,
+    "oof_threshold_recall_potable": 0.1643835616438356,
+    "oof_threshold_n_predicted_potable": 214,
+    "oof_threshold_curve": [
+      {
+        "threshold": 0.3,
+        "n_predicted_potable": 1750,
+        "precision_potable": 0.4777142857142857,
+        "recall_potable": 0.8180039138943248,
+        "false_potable": 914,
+        "false_not_potable": 186
+      },
+      {
+        "threshold": 0.35,
+        "n_predicted_potable": 1432,
+        "precision_potable": 0.5160614525139665,
+        "recall_potable": 0.723091976516634,
+        "false_potable": 693,
+        "false_not_potable": 283
+      },
+      {
+        "threshold": 0.4,
+        "n_predicted_potable": 1117,
+        "precision_potable": 0.5622202327663384,
+        "recall_potable": 0.6144814090019569,
+        "false_potable": 489,
+        "false_not_potable": 394
+      },
+      {
+        "threshold": 0.45,
+        "n_predicted_potable": 850,
+        "precision_potable": 0.6,
+        "recall_potable": 0.49902152641878667,
+        "false_potable": 340,
+        "false_not_potable": 512
+      },
+      {
+        "threshold": 0.5,
+        "n_predicted_potable": 661,
+        "precision_potable": 0.6293494704992436,
+        "recall_potable": 0.4070450097847358,
+        "false_potable": 245,
+        "false_not_potable": 606
+      },
+      {
+        "threshold": 0.55,
+        "n_predicted_potable": 468,
+        "precision_potable": 0.6517094017094017,
+        "recall_potable": 0.2984344422700587,
+        "false_potable": 163,
+        "false_not_potable": 717
+      },
+      {
+        "threshold": 0.6,
+        "n_predicted_potable": 320,
+        "precision_potable": 0.696875,
+        "recall_potable": 0.2181996086105675,
+        "false_potable": 97,
+        "false_not_potable": 799
+      },
+      {
+        "threshold": 0.65,
+        "n_predicted_potable": 214,
+        "precision_potable": 0.7850467289719626,
+        "recall_potable": 0.1643835616438356,
+        "false_potable": 46,
+        "false_not_potable": 854
+      },
+      {
+        "threshold": 0.7,
+        "n_predicted_potable": 134,
+        "precision_potable": 0.8134328358208955,
+        "recall_potable": 0.10665362035225048,
+        "false_potable": 25,
+        "false_not_potable": 913
+      },
+      {
+        "threshold": 0.75,
+        "n_predicted_potable": 81,
+        "precision_potable": 0.8518518518518519,
+        "recall_potable": 0.0675146771037182,
+        "false_potable": 12,
+        "false_not_potable": 953
+      },
+      {
+        "threshold": 0.8,
+        "n_predicted_potable": 40,
+        "precision_potable": 0.875,
+        "recall_potable": 0.03424657534246575,
+        "false_potable": 5,
+        "false_not_potable": 987
+      },
+      {
+        "threshold": 0.85,
+        "n_predicted_potable": 19,
+        "precision_potable": 0.8947368421052632,
+        "recall_potable": 0.016634050880626222,
+        "false_potable": 2,
+        "false_not_potable": 1005
+      },
+      {
+        "threshold": 0.9,
+        "n_predicted_potable": 5,
+        "precision_potable": 0.8,
+        "recall_potable": 0.003913894324853229,
+        "false_potable": 1,
+        "false_not_potable": 1018
+      }
+    ],
+    "test_accuracy": 0.6539634146341463,
+    "test_macro_f1": 0.5237665780796772,
+    "test_weighted_f1": 0.5784264744757225,
+    "test_precision_class_0": 0.6444073455759599,
+    "test_precision_class_1": 0.7543859649122807,
+    "test_recall_class_0": 0.965,
+    "test_recall_class_1": 0.16796875,
+    "test_f1_class_0": 0.7727727727727728,
+    "test_f1_class_1": 0.2747603833865815,
+    "test_accuracy_ci95": [
+      0.6167593989026137,
+      0.689374744808928
+    ],
+    "test_precision_class_1_ci95": [
+      0.6289770366095616,
+      0.8476716258852038
+    ],
+    "test_n_predicted_potable": 57,
+    "test_false_potable_rate": 0.035,
+    "confusion_matrix": [
+      [
+        386,
+        14
+      ],
+      [
+        213,
+        43
+      ]
+    ],
+    "confusion_matrix_labels": {
+      "rows": "actual",
+      "columns": "predicted",
+      "class_0": "Not Potable",
+      "class_1": "Potable"
+    },
+    "actual_not_potable_pred_not_potable": 386,
+    "actual_not_potable_pred_potable": 14,
+    "actual_potable_pred_not_potable": 213,
+    "actual_potable_pred_potable": 43,
+    "test_classification_report": "                 precision    recall  f1-score   support\n\n0 = Not Potable     0.6444    0.9650    0.7728       400\n    1 = Potable     0.7544    0.1680    0.2748       256\n\n       accuracy                         0.6540       656\n      macro avg     0.6994    0.5665    0.5238       656\n   weighted avg     0.6873    0.6540    0.5784       656\n",
+    "test_native_accuracy": 0.6219512195121951,
+    "test_native_macro_f1": 0.6022492787638747,
+    "test_native_weighted_f1": 0.6216813299129031,
+    "test_native_precision_class_0": 0.6890547263681592,
+    "test_native_precision_class_1": 0.515748031496063,
+    "test_native_recall_class_0": 0.6925,
+    "test_native_recall_class_1": 0.51171875,
+    "test_native_confusion_matrix": [
+      [
+        277,
+        123
+      ],
+      [
+        125,
+        131
+      ]
+    ],
+    "model_name": "SVC"
+  },
+  "Extra_Trees": {
+    "cv_accuracy_mean": 0.6553435114503816,
+    "cv_accuracy_std": 0.014209549976325423,
+    "cv_macro_f1_mean": 0.6281850726839507,
+    "cv_macro_f1_std": 0.021015886318869435,
+    "cv_weighted_f1_mean": 0.650034581860097,
+    "cv_weighted_f1_std": 0.01726611312980089,
+    "cv_precision_class_0_mean": 0.7035885525298037,
+    "cv_precision_class_0_std": 0.021360645750972716,
+    "cv_precision_class_1_mean": 0.5654605432539594,
+    "cv_precision_class_1_std": 0.017125168736798882,
+    "cv_recall_class_0_mean": 0.7546728056426332,
+    "cv_recall_class_0_std": 0.02862504800556357,
+    "cv_recall_class_1_mean": 0.4999521759923481,
+    "cv_recall_class_1_std": 0.06453906267887703,
+    "cv_f1_class_0_mean": 0.7275143562751609,
+    "cv_f1_class_0_std": 0.009677206744276558,
+    "cv_f1_class_1_mean": 0.5288557890927404,
+    "cv_f1_class_1_std": 0.03968560209462515,
+    "train_accuracy_mean": 0.9318702290076336,
+    "train_accuracy_std": 0.04421286631658755,
+    "cv_macro_f1_folds": [
+      0.6153077163386442,
+      0.6504636221430773,
+      0.6128791322984997,
+      0.6565782844067629,
+      0.6056966082327695
+    ],
+    "cv_accuracy_folds": [
+      0.6412213740458015,
+      0.6736641221374046,
+      0.6526717557251909,
+      0.6698473282442748,
+      0.6393129770992366
+    ],
+    "cv_threshold_accuracy_mean": 0.6473282442748092,
+    "cv_threshold_accuracy_std": 0.01674176503775672,
+    "cv_threshold_macro_f1_mean": 0.49474087276782663,
+    "cv_threshold_macro_f1_std": 0.04262966107962305,
+    "cv_threshold_precision_1_mean": 0.7970901562205911,
+    "cv_threshold_precision_1_std": 0.06880200215397862,
+    "cv_threshold_recall_1_mean": 0.12922046867527498,
+    "cv_threshold_recall_1_std": 0.05680344901383209,
+    "cv_threshold_recall_0_mean": 0.9787304075235109,
+    "cv_threshold_recall_0_std": 0.013309712221506733,
+    "cv_threshold_false_potable_mean": 6.8,
+    "cv_threshold_false_potable_std": 4.261455150532504,
+    "cv_threshold_n_predicted_potable_mean": 33.2,
+    "cv_threshold_n_predicted_potable_std": 15.197368193210297,
+    "cv_threshold_values": [
+      0.6,
+      0.6,
+      0.55,
+      0.6,
+      0.6
+    ],
+    "cv_threshold_target_met_folds": 5,
+    "cv_method": "nested stratified CV (outer folds), native decision rule",
+    "hyperparameters": {
+      "min_samples_leaf": 5
+    },
+    "decision_threshold": 0.55,
+    "decision_rule": "predict Potable only if P(Potable) >= 0.55",
+    "threshold_target_met": true,
+    "oof_threshold_precision_potable": 0.7195767195767195,
+    "oof_threshold_recall_potable": 0.26614481409001955,
+    "oof_threshold_n_predicted_potable": 378,
+    "oof_threshold_curve": [
+      {
+        "threshold": 0.3,
+        "n_predicted_potable": 2604,
+        "precision_potable": 0.3924731182795699,
+        "recall_potable": 1.0,
+        "false_potable": 1582,
+        "false_not_potable": 0
+      },
+      {
+        "threshold": 0.35,
+        "n_predicted_potable": 2539,
+        "precision_potable": 0.40015754233950374,
+        "recall_potable": 0.9941291585127201,
+        "false_potable": 1523,
+        "false_not_potable": 6
+      },
+      {
+        "threshold": 0.4,
+        "n_predicted_potable": 2297,
+        "precision_potable": 0.42011319111885065,
+        "recall_potable": 0.9442270058708415,
+        "false_potable": 1332,
+        "false_not_potable": 57
+      },
+      {
+        "threshold": 0.45,
+        "n_predicted_potable": 1717,
+        "precision_potable": 0.46418171228887595,
+        "recall_potable": 0.7798434442270059,
+        "false_potable": 920,
+        "false_not_potable": 225
+      },
+      {
+        "threshold": 0.5,
+        "n_predicted_potable": 887,
+        "precision_potable": 0.5648252536640361,
+        "recall_potable": 0.49021526418786693,
+        "false_potable": 386,
+        "false_not_potable": 521
+      },
+      {
+        "threshold": 0.55,
+        "n_predicted_potable": 378,
+        "precision_potable": 0.7195767195767195,
+        "recall_potable": 0.26614481409001955,
+        "false_potable": 106,
+        "false_not_potable": 750
+      },
+      {
+        "threshold": 0.6,
+        "n_predicted_potable": 150,
+        "precision_potable": 0.82,
+        "recall_potable": 0.12035225048923678,
+        "false_potable": 27,
+        "false_not_potable": 899
+      },
+      {
+        "threshold": 0.65,
+        "n_predicted_potable": 65,
+        "precision_potable": 0.8153846153846154,
+        "recall_potable": 0.05185909980430528,
+        "false_potable": 12,
+        "false_not_potable": 969
+      },
+      {
+        "threshold": 0.7,
+        "n_predicted_potable": 16,
+        "precision_potable": 1.0,
+        "recall_potable": 0.015655577299412915,
+        "false_potable": 0,
+        "false_not_potable": 1006
+      },
+      {
+        "threshold": 0.75,
+        "n_predicted_potable": 0,
+        "precision_potable": 0.0,
+        "recall_potable": 0.0,
+        "false_potable": 0,
+        "false_not_potable": 1022
+      },
+      {
+        "threshold": 0.8,
+        "n_predicted_potable": 0,
+        "precision_potable": 0.0,
+        "recall_potable": 0.0,
+        "false_potable": 0,
+        "false_not_potable": 1022
+      },
+      {
+        "threshold": 0.85,
+        "n_predicted_potable": 0,
+        "precision_potable": 0.0,
+        "recall_potable": 0.0,
+        "false_potable": 0,
+        "false_not_potable": 1022
+      },
+      {
+        "threshold": 0.9,
+        "n_predicted_potable": 0,
+        "precision_potable": 0.0,
+        "recall_potable": 0.0,
+        "false_potable": 0,
+        "false_not_potable": 1022
+      }
+    ],
+    "test_accuracy": 0.6600609756097561,
+    "test_macro_f1": 0.5598600342392596,
+    "test_weighted_f1": 0.60595886988575,
+    "test_precision_class_0": 0.655536028119508,
+    "test_precision_class_1": 0.6896551724137931,
+    "test_recall_class_0": 0.9325,
+    "test_recall_class_1": 0.234375,
+    "test_f1_class_0": 0.7698658410732714,
+    "test_f1_class_1": 0.3498542274052478,
+    "test_accuracy_ci95": [
+      0.6229744034577267,
+      0.6952838647572424
+    ],
+    "test_precision_class_1_ci95": [
+      0.586161806572981,
+      0.7771084491713882
+    ],
+    "test_n_predicted_potable": 87,
+    "test_false_potable_rate": 0.0675,
+    "confusion_matrix": [
+      [
+        373,
+        27
+      ],
+      [
+        196,
+        60
+      ]
+    ],
+    "confusion_matrix_labels": {
+      "rows": "actual",
+      "columns": "predicted",
+      "class_0": "Not Potable",
+      "class_1": "Potable"
+    },
+    "actual_not_potable_pred_not_potable": 373,
+    "actual_not_potable_pred_potable": 27,
+    "actual_potable_pred_not_potable": 196,
+    "actual_potable_pred_potable": 60,
+    "test_classification_report": "                 precision    recall  f1-score   support\n\n0 = Not Potable     0.6555    0.9325    0.7699       400\n    1 = Potable     0.6897    0.2344    0.3499       256\n\n       accuracy                         0.6601       656\n      macro avg     0.6726    0.5834    0.5599       656\n   weighted avg     0.6689    0.6601    0.6060       656\n",
+    "test_native_accuracy": 0.6417682926829268,
+    "test_native_macro_f1": 0.608586916504805,
+    "test_native_weighted_f1": 0.6336032420003523,
+    "test_native_precision_class_0": 0.6845637583892618,
+    "test_native_precision_class_1": 0.5502392344497608,
+    "test_native_recall_class_0": 0.765,
+    "test_native_recall_class_1": 0.44921875,
+    "test_native_confusion_matrix": [
+      [
+        306,
+        94
+      ],
+      [
+        141,
+        115
+      ]
+    ],
+    "model_name": "Extra_Trees"
+  },
+  "Soft_Voting_RF_SVC": {
+    "cv_accuracy_mean": 0.683969465648855,
+    "cv_accuracy_std": 0.015152239115480342,
+    "cv_macro_f1_mean": 0.6397872523433653,
+    "cv_macro_f1_std": 0.022488332957695936,
+    "cv_weighted_f1_mean": 0.6674230223475164,
+    "cv_weighted_f1_std": 0.018982996381519658,
+    "cv_precision_class_0_mean": 0.6998711099829753,
+    "cv_precision_class_0_std": 0.0167182701412972,
+    "cv_precision_class_1_mean": 0.6412856793145655,
+    "cv_precision_class_1_std": 0.023152764018380907,
+    "cv_recall_class_0_mean": 0.8454349529780563,
+    "cv_recall_class_0_std": 0.02205551890155084,
+    "cv_recall_class_1_mean": 0.4314681970349115,
+    "cv_recall_class_1_std": 0.052732293622216105,
+    "cv_f1_class_0_mean": 0.76545116291222,
+    "cv_f1_class_0_std": 0.009800029711465033,
+    "cv_f1_class_1_mean": 0.5141233417745107,
+    "cv_f1_class_1_std": 0.039139827922477055,
+    "train_accuracy_mean": 0.8919847328244275,
+    "train_accuracy_std": 0.027807314709529497,
+    "cv_macro_f1_folds": [
+      0.6344974233886139,
+      0.6298954341754888,
+      0.6324660324660325,
+      0.683411556174403,
+      0.6186658155122885
+    ],
+    "cv_accuracy_folds": [
+      0.6851145038167938,
+      0.6679389312977099,
+      0.6812977099236641,
+      0.7118320610687023,
+      0.6736641221374046
+    ],
+    "cv_threshold_accuracy_mean": 0.6706106870229007,
+    "cv_threshold_accuracy_std": 0.016039619381260053,
+    "cv_threshold_macro_f1_mean": 0.5638419347642165,
+    "cv_threshold_macro_f1_std": 0.03408567252053972,
+    "cv_threshold_precision_1_mean": 0.757981057591576,
+    "cv_threshold_precision_1_std": 0.03551613177199381,
+    "cv_threshold_recall_1_mean": 0.22898613103778093,
+    "cv_threshold_recall_1_std": 0.054788712711323594,
+    "cv_threshold_recall_0_mean": 0.9530740595611285,
+    "cv_threshold_recall_0_std": 0.012638993146042055,
+    "cv_threshold_false_potable_mean": 15.0,
+    "cv_threshold_false_potable_std": 4.049691346263317,
+    "cv_threshold_n_predicted_potable_mean": 61.8,
+    "cv_threshold_n_predicted_potable_std": 14.551975810864997,
+    "cv_threshold_values": [
+      0.55,
+      0.6,
+      0.6,
+      0.6,
+      0.6
+    ],
+    "cv_threshold_target_met_folds": 5,
+    "cv_method": "nested stratified CV (outer folds), native decision rule",
+    "hyperparameters": {
+      "Random_Forest": {
+        "max_depth": 15,
+        "min_samples_leaf": 5
+      },
+      "SVC": {
+        "C": 2,
+        "gamma": 0.1
+      }
+    },
+    "decision_threshold": 0.55,
+    "decision_rule": "predict Potable only if P(Potable) >= 0.55",
+    "threshold_target_met": true,
+    "oof_threshold_precision_potable": 0.7,
+    "oof_threshold_recall_potable": 0.3150684931506849,
+    "oof_threshold_n_predicted_potable": 460,
+    "oof_threshold_curve": [
+      {
+        "threshold": 0.3,
+        "n_predicted_potable": 2236,
+        "precision_potable": 0.4288908765652952,
+        "recall_potable": 0.9383561643835616,
+        "false_potable": 1277,
+        "false_not_potable": 63
+      },
+      {
+        "threshold": 0.35,
+        "n_predicted_potable": 1872,
+        "precision_potable": 0.4658119658119658,
+        "recall_potable": 0.8532289628180039,
+        "false_potable": 1000,
+        "false_not_potable": 150
+      },
+      {
+        "threshold": 0.4,
+        "n_predicted_potable": 1417,
+        "precision_potable": 0.5137614678899083,
+        "recall_potable": 0.7123287671232876,
+        "false_potable": 689,
+        "false_not_potable": 294
+      },
+      {
+        "threshold": 0.45,
+        "n_predicted_potable": 1060,
+        "precision_potable": 0.5716981132075472,
+        "recall_potable": 0.5929549902152642,
+        "false_potable": 454,
+        "false_not_potable": 416
+      },
+      {
+        "threshold": 0.5,
+        "n_predicted_potable": 712,
+        "precision_potable": 0.6306179775280899,
+        "recall_potable": 0.43933463796477495,
+        "false_potable": 263,
+        "false_not_potable": 573
+      },
+      {
+        "threshold": 0.55,
+        "n_predicted_potable": 460,
+        "precision_potable": 0.7,
+        "recall_potable": 0.3150684931506849,
+        "false_potable": 138,
+        "false_not_potable": 700
+      },
+      {
+        "threshold": 0.6,
+        "n_predicted_potable": 297,
+        "precision_potable": 0.7542087542087542,
+        "recall_potable": 0.2191780821917808,
+        "false_potable": 73,
+        "false_not_potable": 798
+      },
+      {
+        "threshold": 0.65,
+        "n_predicted_potable": 188,
+        "precision_potable": 0.8031914893617021,
+        "recall_potable": 0.14774951076320939,
+        "false_potable": 37,
+        "false_not_potable": 871
+      },
+      {
+        "threshold": 0.7,
+        "n_predicted_potable": 108,
+        "precision_potable": 0.8518518518518519,
+        "recall_potable": 0.09001956947162426,
+        "false_potable": 16,
+        "false_not_potable": 930
+      },
+      {
+        "threshold": 0.75,
+        "n_predicted_potable": 64,
+        "precision_potable": 0.828125,
+        "recall_potable": 0.05185909980430528,
+        "false_potable": 11,
+        "false_not_potable": 969
+      },
+      {
+        "threshold": 0.8,
+        "n_predicted_potable": 27,
+        "precision_potable": 0.8518518518518519,
+        "recall_potable": 0.022504892367906065,
+        "false_potable": 4,
+        "false_not_potable": 999
+      },
+      {
+        "threshold": 0.85,
+        "n_predicted_potable": 6,
+        "precision_potable": 1.0,
+        "recall_potable": 0.005870841487279843,
+        "false_potable": 0,
+        "false_not_potable": 1016
+      },
+      {
+        "threshold": 0.9,
+        "n_predicted_potable": 1,
+        "precision_potable": 1.0,
+        "recall_potable": 0.0009784735812133072,
+        "false_potable": 0,
+        "false_not_potable": 1021
+      }
+    ],
+    "test_accuracy": 0.6707317073170732,
+    "test_macro_f1": 0.5907531279243059,
+    "test_weighted_f1": 0.6304666294158869,
+    "test_precision_class_0": 0.6684981684981685,
+    "test_precision_class_1": 0.6818181818181818,
+    "test_recall_class_0": 0.9125,
+    "test_recall_class_1": 0.29296875,
+    "test_f1_class_0": 0.7716701902748414,
+    "test_f1_class_1": 0.4098360655737705,
+    "test_accuracy_ci95": [
+      0.6338666623835707,
+      0.7056088237123963
+    ],
+    "test_precision_class_1_ci95": [
+      0.5899034163850911,
+      0.7614624251376227
+    ],
+    "test_n_predicted_potable": 110,
+    "test_false_potable_rate": 0.0875,
+    "confusion_matrix": [
+      [
+        365,
+        35
+      ],
+      [
+        181,
+        75
+      ]
+    ],
+    "confusion_matrix_labels": {
+      "rows": "actual",
+      "columns": "predicted",
+      "class_0": "Not Potable",
+      "class_1": "Potable"
+    },
+    "actual_not_potable_pred_not_potable": 365,
+    "actual_not_potable_pred_potable": 35,
+    "actual_potable_pred_not_potable": 181,
+    "actual_potable_pred_potable": 75,
+    "test_classification_report": "                 precision    recall  f1-score   support\n\n0 = Not Potable     0.6685    0.9125    0.7717       400\n    1 = Potable     0.6818    0.2930    0.4098       256\n\n       accuracy                         0.6707       656\n      macro avg     0.6752    0.6027    0.5908       656\n   weighted avg     0.6737    0.6707    0.6305       656\n",
+    "test_native_accuracy": 0.6585365853658537,
+    "test_native_macro_f1": 0.6097229304776475,
+    "test_native_weighted_f1": 0.6400210610979135,
+    "test_native_precision_class_0": 0.680327868852459,
+    "test_native_precision_class_1": 0.5952380952380952,
+    "test_native_recall_class_0": 0.83,
+    "test_native_recall_class_1": 0.390625,
+    "test_native_confusion_matrix": [
+      [
+        332,
+        68
+      ],
+      [
+        156,
+        100
+      ]
+    ],
+    "model_name": "Soft_Voting_RF_SVC"
+  },
   "XGBoost": {
-    "cv_accuracy_mean": 0.6312977099236641,
-    "cv_accuracy_std": 0.009302334051109864,
-    "cv_macro_f1_mean": 0.6005115955491788,
-    "cv_macro_f1_std": 0.015334195996513231,
-    "cv_weighted_f1_mean": 0.6247381562038767,
-    "cv_weighted_f1_std": 0.012115108036869104,
+    "cv_accuracy_mean": 0.6347328244274809,
+    "cv_accuracy_std": 0.010768500747836564,
+    "cv_macro_f1_mean": 0.6075218649640611,
+    "cv_macro_f1_std": 0.0124267170678739,
+    "cv_weighted_f1_mean": 0.630171878990615,
+    "cv_weighted_f1_std": 0.011120136906218957,
+    "cv_precision_class_0_mean": 0.6877348481506276,
+    "cv_precision_class_0_std": 0.01028221795157978,
+    "cv_precision_class_1_mean": 0.5358130857110749,
+    "cv_precision_class_1_std": 0.01583221535625093,
+    "cv_recall_class_0_mean": 0.7352958463949844,
+    "cv_recall_class_0_std": 0.019337413011587645,
+    "cv_recall_class_1_mean": 0.4774844571975131,
+    "cv_recall_class_1_std": 0.03033911698962378,
+    "cv_f1_class_0_mean": 0.7105356413826616,
+    "cv_f1_class_0_std": 0.009733333743217559,
+    "cv_f1_class_1_mean": 0.5045080885454605,
+    "cv_f1_class_1_std": 0.020246210161237666,
     "train_accuracy_mean": 1.0,
     "train_accuracy_std": 0.0,
+    "cv_macro_f1_folds": [
+      0.5866604186191815,
+      0.6226356335665097,
+      0.6068862039011292,
+      0.6173359571982043,
+      0.6040911115352803
+    ],
+    "cv_accuracy_folds": [
+      0.6145038167938931,
+      0.6469465648854962,
+      0.6374045801526718,
+      0.6374045801526718,
+      0.6374045801526718
+    ],
+    "cv_threshold_accuracy_mean": 0.6347328244274809,
+    "cv_threshold_accuracy_std": 0.010768500747836564,
+    "cv_threshold_macro_f1_mean": 0.6075218649640611,
+    "cv_threshold_macro_f1_std": 0.0124267170678739,
+    "cv_threshold_precision_1_mean": 0.5358130857110749,
+    "cv_threshold_precision_1_std": 0.01583221535625093,
+    "cv_threshold_recall_1_mean": 0.4774844571975131,
+    "cv_threshold_recall_1_std": 0.03033911698962378,
+    "cv_threshold_recall_0_mean": 0.7352958463949844,
+    "cv_threshold_recall_0_std": 0.019337413011587645,
+    "cv_threshold_false_potable_mean": 84.6,
+    "cv_threshold_false_potable_std": 6.1838499334961226,
+    "cv_threshold_n_predicted_potable_mean": 182.2,
+    "cv_threshold_n_predicted_potable_std": 11.01635148313633,
+    "cv_threshold_values": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "cv_threshold_target_met_folds": 0,
+    "cv_method": "nested stratified CV (outer folds), native decision rule",
+    "hyperparameters": {},
+    "decision_threshold": null,
+    "decision_rule": "native decision rule of the model",
+    "threshold_target_met": false,
+    "oof_threshold_precision_potable": null,
+    "oof_threshold_recall_potable": null,
+    "oof_threshold_n_predicted_potable": null,
+    "oof_threshold_curve": [
+      {
+        "threshold": 0.3,
+        "n_predicted_potable": 1329,
+        "precision_potable": 0.48833709556057187,
+        "recall_potable": 0.6350293542074364,
+        "false_potable": 680,
+        "false_not_potable": 373
+      },
+      {
+        "threshold": 0.35,
+        "n_predicted_potable": 1203,
+        "precision_potable": 0.5004156275976724,
+        "recall_potable": 0.589041095890411,
+        "false_potable": 601,
+        "false_not_potable": 420
+      },
+      {
+        "threshold": 0.4,
+        "n_predicted_potable": 1097,
+        "precision_potable": 0.5113947128532361,
+        "recall_potable": 0.5489236790606654,
+        "false_potable": 536,
+        "false_not_potable": 461
+      },
+      {
+        "threshold": 0.45,
+        "n_predicted_potable": 1008,
+        "precision_potable": 0.5218253968253969,
+        "recall_potable": 0.5146771037181996,
+        "false_potable": 482,
+        "false_not_potable": 496
+      },
+      {
+        "threshold": 0.5,
+        "n_predicted_potable": 911,
+        "precision_potable": 0.535675082327113,
+        "recall_potable": 0.4774951076320939,
+        "false_potable": 423,
+        "false_not_potable": 534
+      },
+      {
+        "threshold": 0.55,
+        "n_predicted_potable": 843,
+        "precision_potable": 0.5468564650059312,
+        "recall_potable": 0.45107632093933464,
+        "false_potable": 382,
+        "false_not_potable": 561
+      },
+      {
+        "threshold": 0.6,
+        "n_predicted_potable": 749,
+        "precision_potable": 0.5647530040053405,
+        "recall_potable": 0.41389432485322897,
+        "false_potable": 326,
+        "false_not_potable": 599
+      },
+      {
+        "threshold": 0.65,
+        "n_predicted_potable": 663,
+        "precision_potable": 0.579185520361991,
+        "recall_potable": 0.37573385518590996,
+        "false_potable": 279,
+        "false_not_potable": 638
+      },
+      {
+        "threshold": 0.7,
+        "n_predicted_potable": 584,
+        "precision_potable": 0.6061643835616438,
+        "recall_potable": 0.34637964774951074,
+        "false_potable": 230,
+        "false_not_potable": 668
+      },
+      {
+        "threshold": 0.75,
+        "n_predicted_potable": 500,
+        "precision_potable": 0.616,
+        "recall_potable": 0.3013698630136986,
+        "false_potable": 192,
+        "false_not_potable": 714
+      },
+      {
+        "threshold": 0.8,
+        "n_predicted_potable": 425,
+        "precision_potable": 0.6423529411764706,
+        "recall_potable": 0.2671232876712329,
+        "false_potable": 152,
+        "false_not_potable": 749
+      },
+      {
+        "threshold": 0.85,
+        "n_predicted_potable": 350,
+        "precision_potable": 0.6571428571428571,
+        "recall_potable": 0.22504892367906065,
+        "false_potable": 120,
+        "false_not_potable": 792
+      },
+      {
+        "threshold": 0.9,
+        "n_predicted_potable": 265,
+        "precision_potable": 0.6792452830188679,
+        "recall_potable": 0.1761252446183953,
+        "false_potable": 85,
+        "false_not_potable": 842
+      }
+    ],
     "test_accuracy": 0.6173780487804879,
     "test_macro_f1": 0.582742673238473,
     "test_weighted_f1": 0.6091315307942937,
@@ -57,6 +1116,16 @@
     "test_recall_class_1": 0.421875,
     "test_f1_class_0": 0.7029585798816568,
     "test_f1_class_1": 0.4625267665952891,
+    "test_accuracy_ci95": [
+      0.5796042102540394,
+      0.6537851864369381
+    ],
+    "test_precision_class_1_ci95": [
+      0.44479605323959115,
+      0.5784769222188495
+    ],
+    "test_n_predicted_potable": 211,
+    "test_false_potable_rate": 0.2575,
     "confusion_matrix": [
       [
         297,
@@ -77,6 +1146,24 @@
     "actual_not_potable_pred_potable": 103,
     "actual_potable_pred_not_potable": 148,
     "actual_potable_pred_potable": 108,
+    "test_classification_report": "                 precision    recall  f1-score   support\n\n0 = Not Potable     0.6674    0.7425    0.7030       400\n    1 = Potable     0.5118    0.4219    0.4625       256\n\n       accuracy                         0.6174       656\n      macro avg     0.5896    0.5822    0.5827       656\n   weighted avg     0.6067    0.6174    0.6091       656\n",
+    "test_native_accuracy": 0.6173780487804879,
+    "test_native_macro_f1": 0.582742673238473,
+    "test_native_weighted_f1": 0.6091315307942937,
+    "test_native_precision_class_0": 0.6674157303370787,
+    "test_native_precision_class_1": 0.5118483412322274,
+    "test_native_recall_class_0": 0.7425,
+    "test_native_recall_class_1": 0.421875,
+    "test_native_confusion_matrix": [
+      [
+        297,
+        103
+      ],
+      [
+        148,
+        108
+      ]
+    ],
     "model_name": "XGBoost"
   },
   "Decision_Tree": {
@@ -86,8 +1173,170 @@
     "cv_macro_f1_std": 0.033206388770439244,
     "cv_weighted_f1_mean": 0.6054532709250504,
     "cv_weighted_f1_std": 0.03153558712428025,
+    "cv_precision_class_0_mean": 0.6731888084537985,
+    "cv_precision_class_0_std": 0.026716012156686654,
+    "cv_precision_class_1_mean": 0.49709542382154437,
+    "cv_precision_class_1_std": 0.040989856963250144,
+    "cv_recall_class_0_mean": 0.6939615987460815,
+    "cv_recall_class_0_std": 0.03337321196523794,
+    "cv_recall_class_1_mean": 0.47266857962697273,
+    "cv_recall_class_1_std": 0.05055325398489255,
+    "cv_f1_class_0_mean": 0.683146237531961,
+    "cv_f1_class_0_std": 0.026591089444658874,
+    "cv_f1_class_1_mean": 0.48399332504379744,
+    "cv_f1_class_1_std": 0.04300609151458352,
     "train_accuracy_mean": 0.7766221374045801,
     "train_accuracy_std": 0.056974838467539285,
+    "cv_macro_f1_folds": [
+      0.6116704101061465,
+      0.5893806990881459,
+      0.6078086419753086,
+      0.5892195820830968,
+      0.519769573186698
+    ],
+    "cv_accuracy_folds": [
+      0.6278625954198473,
+      0.6221374045801527,
+      0.6297709923664122,
+      0.6125954198473282,
+      0.5458015267175572
+    ],
+    "cv_threshold_accuracy_mean": 0.6076335877862595,
+    "cv_threshold_accuracy_std": 0.03148797131090511,
+    "cv_threshold_macro_f1_mean": 0.5835697812878792,
+    "cv_threshold_macro_f1_std": 0.033206388770439244,
+    "cv_threshold_precision_1_mean": 0.49709542382154437,
+    "cv_threshold_precision_1_std": 0.040989856963250144,
+    "cv_threshold_recall_1_mean": 0.47266857962697273,
+    "cv_threshold_recall_1_std": 0.05055325398489255,
+    "cv_threshold_recall_0_mean": 0.6939615987460815,
+    "cv_threshold_recall_0_std": 0.03337321196523794,
+    "cv_threshold_false_potable_mean": 97.8,
+    "cv_threshold_false_potable_std": 10.571660229122008,
+    "cv_threshold_n_predicted_potable_mean": 194.4,
+    "cv_threshold_n_predicted_potable_std": 13.093509842666327,
+    "cv_threshold_values": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "cv_threshold_target_met_folds": 0,
+    "cv_method": "nested stratified CV (outer folds), native decision rule",
+    "hyperparameters": {},
+    "decision_threshold": null,
+    "decision_rule": "native decision rule of the model",
+    "threshold_target_met": false,
+    "oof_threshold_precision_potable": null,
+    "oof_threshold_recall_potable": null,
+    "oof_threshold_n_predicted_potable": null,
+    "oof_threshold_curve": [
+      {
+        "threshold": 0.3,
+        "n_predicted_potable": 1811,
+        "precision_potable": 0.4312534511319713,
+        "recall_potable": 0.764187866927593,
+        "false_potable": 1030,
+        "false_not_potable": 241
+      },
+      {
+        "threshold": 0.35,
+        "n_predicted_potable": 1658,
+        "precision_potable": 0.4439083232810615,
+        "recall_potable": 0.7201565557729941,
+        "false_potable": 922,
+        "false_not_potable": 286
+      },
+      {
+        "threshold": 0.4,
+        "n_predicted_potable": 1561,
+        "precision_potable": 0.45035233824471493,
+        "recall_potable": 0.687866927592955,
+        "false_potable": 858,
+        "false_not_potable": 319
+      },
+      {
+        "threshold": 0.45,
+        "n_predicted_potable": 1161,
+        "precision_potable": 0.48578811369509045,
+        "recall_potable": 0.5518590998043053,
+        "false_potable": 597,
+        "false_not_potable": 458
+      },
+      {
+        "threshold": 0.5,
+        "n_predicted_potable": 972,
+        "precision_potable": 0.49691358024691357,
+        "recall_potable": 0.4726027397260274,
+        "false_potable": 489,
+        "false_not_potable": 539
+      },
+      {
+        "threshold": 0.55,
+        "n_predicted_potable": 818,
+        "precision_potable": 0.511002444987775,
+        "recall_potable": 0.4090019569471624,
+        "false_potable": 400,
+        "false_not_potable": 604
+      },
+      {
+        "threshold": 0.6,
+        "n_predicted_potable": 678,
+        "precision_potable": 0.5457227138643068,
+        "recall_potable": 0.36203522504892366,
+        "false_potable": 308,
+        "false_not_potable": 652
+      },
+      {
+        "threshold": 0.65,
+        "n_predicted_potable": 653,
+        "precision_potable": 0.554364471669219,
+        "recall_potable": 0.3542074363992172,
+        "false_potable": 291,
+        "false_not_potable": 660
+      },
+      {
+        "threshold": 0.7,
+        "n_predicted_potable": 589,
+        "precision_potable": 0.567062818336163,
+        "recall_potable": 0.3268101761252446,
+        "false_potable": 255,
+        "false_not_potable": 688
+      },
+      {
+        "threshold": 0.75,
+        "n_predicted_potable": 538,
+        "precision_potable": 0.5799256505576208,
+        "recall_potable": 0.30528375733855184,
+        "false_potable": 226,
+        "false_not_potable": 710
+      },
+      {
+        "threshold": 0.8,
+        "n_predicted_potable": 475,
+        "precision_potable": 0.5810526315789474,
+        "recall_potable": 0.2700587084148728,
+        "false_potable": 199,
+        "false_not_potable": 746
+      },
+      {
+        "threshold": 0.85,
+        "n_predicted_potable": 439,
+        "precision_potable": 0.5763097949886105,
+        "recall_potable": 0.24755381604696672,
+        "false_potable": 186,
+        "false_not_potable": 769
+      },
+      {
+        "threshold": 0.9,
+        "n_predicted_potable": 388,
+        "precision_potable": 0.5721649484536082,
+        "recall_potable": 0.2172211350293542,
+        "false_potable": 166,
+        "false_not_potable": 800
+      }
+    ],
     "test_accuracy": 0.6067073170731707,
     "test_macro_f1": 0.5655093804873541,
     "test_weighted_f1": 0.5948782065683323,
@@ -97,6 +1346,16 @@
     "test_recall_class_1": 0.3828125,
     "test_f1_class_0": 0.6993006993006993,
     "test_f1_class_1": 0.43171806167400884,
+    "test_accuracy_ci95": [
+      0.5688095006958425,
+      0.6433626781141368
+    ],
+    "test_precision_class_1_ci95": [
+      0.4260707012273328,
+      0.5640205317082349
+    ],
+    "test_n_predicted_potable": 198,
+    "test_false_potable_rate": 0.25,
     "confusion_matrix": [
       [
         300,
@@ -117,6 +1376,24 @@
     "actual_not_potable_pred_potable": 100,
     "actual_potable_pred_not_potable": 158,
     "actual_potable_pred_potable": 98,
+    "test_classification_report": "                 precision    recall  f1-score   support\n\n0 = Not Potable     0.6550    0.7500    0.6993       400\n    1 = Potable     0.4949    0.3828    0.4317       256\n\n       accuracy                         0.6067       656\n      macro avg     0.5750    0.5664    0.5655       656\n   weighted avg     0.5926    0.6067    0.5949       656\n",
+    "test_native_accuracy": 0.6067073170731707,
+    "test_native_macro_f1": 0.5655093804873541,
+    "test_native_weighted_f1": 0.5948782065683323,
+    "test_native_precision_class_0": 0.6550218340611353,
+    "test_native_precision_class_1": 0.494949494949495,
+    "test_native_recall_class_0": 0.75,
+    "test_native_recall_class_1": 0.3828125,
+    "test_native_confusion_matrix": [
+      [
+        300,
+        100
+      ],
+      [
+        158,
+        98
+      ]
+    ],
     "model_name": "Decision_Tree"
   },
   "Logistic_Regression": {
@@ -126,8 +1403,170 @@
     "cv_macro_f1_std": 0.01734624852289197,
     "cv_weighted_f1_mean": 0.5001451804693025,
     "cv_weighted_f1_std": 0.01596561475622179,
+    "cv_precision_class_0_mean": 0.6002426827531179,
+    "cv_precision_class_0_std": 0.01785221429631887,
+    "cv_precision_class_1_mean": 0.37825576731483307,
+    "cv_precision_class_1_std": 0.019196386797356687,
+    "cv_recall_class_0_mean": 0.5156563479623824,
+    "cv_recall_class_0_std": 0.024732222151397254,
+    "cv_recall_class_1_mean": 0.4619033955045433,
+    "cv_recall_class_1_std": 0.04556972848803408,
+    "cv_f1_class_0_mean": 0.5542892714862683,
+    "cv_f1_class_0_std": 0.016347488724176237,
+    "cv_f1_class_1_mean": 0.4155251115260519,
+    "cv_f1_class_1_std": 0.02833503214226123,
     "train_accuracy_mean": 0.5154580152671755,
     "train_accuracy_std": 0.0034218360834047633,
+    "cv_macro_f1_folds": [
+      0.47200791222192895,
+      0.49884021326883965,
+      0.5026186780421892,
+      0.49362535678973196,
+      0.45744379720811046
+    ],
+    "cv_accuracy_folds": [
+      0.48282442748091603,
+      0.5019083969465649,
+      0.5133587786259542,
+      0.5057251908396947,
+      0.46946564885496184
+    ],
+    "cv_threshold_accuracy_mean": 0.49465648854961836,
+    "cv_threshold_accuracy_std": 0.01612115426102511,
+    "cv_threshold_macro_f1_mean": 0.48490719150616,
+    "cv_threshold_macro_f1_std": 0.01734624852289197,
+    "cv_threshold_precision_1_mean": 0.37825576731483307,
+    "cv_threshold_precision_1_std": 0.019196386797356687,
+    "cv_threshold_recall_1_mean": 0.4619033955045433,
+    "cv_threshold_recall_1_std": 0.04556972848803408,
+    "cv_threshold_recall_0_mean": 0.5156563479623824,
+    "cv_threshold_recall_0_std": 0.024732222151397254,
+    "cv_threshold_false_potable_mean": 154.8,
+    "cv_threshold_false_potable_std": 7.984985911070852,
+    "cv_threshold_n_predicted_potable_mean": 249.2,
+    "cv_threshold_n_predicted_potable_std": 15.07846145997661,
+    "cv_threshold_values": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "cv_threshold_target_met_folds": 0,
+    "cv_method": "nested stratified CV (outer folds), native decision rule",
+    "hyperparameters": {},
+    "decision_threshold": null,
+    "decision_rule": "native decision rule of the model",
+    "threshold_target_met": false,
+    "oof_threshold_precision_potable": null,
+    "oof_threshold_recall_potable": null,
+    "oof_threshold_n_predicted_potable": null,
+    "oof_threshold_curve": [
+      {
+        "threshold": 0.3,
+        "n_predicted_potable": 2620,
+        "precision_potable": 0.3900763358778626,
+        "recall_potable": 1.0,
+        "false_potable": 1598,
+        "false_not_potable": 0
+      },
+      {
+        "threshold": 0.35,
+        "n_predicted_potable": 2620,
+        "precision_potable": 0.3900763358778626,
+        "recall_potable": 1.0,
+        "false_potable": 1598,
+        "false_not_potable": 0
+      },
+      {
+        "threshold": 0.4,
+        "n_predicted_potable": 2620,
+        "precision_potable": 0.3900763358778626,
+        "recall_potable": 1.0,
+        "false_potable": 1598,
+        "false_not_potable": 0
+      },
+      {
+        "threshold": 0.45,
+        "n_predicted_potable": 2559,
+        "precision_potable": 0.38647909339585773,
+        "recall_potable": 0.9677103718199609,
+        "false_potable": 1570,
+        "false_not_potable": 33
+      },
+      {
+        "threshold": 0.5,
+        "n_predicted_potable": 1246,
+        "precision_potable": 0.37881219903691815,
+        "recall_potable": 0.461839530332681,
+        "false_potable": 774,
+        "false_not_potable": 550
+      },
+      {
+        "threshold": 0.55,
+        "n_predicted_potable": 65,
+        "precision_potable": 0.46153846153846156,
+        "recall_potable": 0.029354207436399216,
+        "false_potable": 35,
+        "false_not_potable": 992
+      },
+      {
+        "threshold": 0.6,
+        "n_predicted_potable": 1,
+        "precision_potable": 0.0,
+        "recall_potable": 0.0,
+        "false_potable": 1,
+        "false_not_potable": 1022
+      },
+      {
+        "threshold": 0.65,
+        "n_predicted_potable": 0,
+        "precision_potable": 0.0,
+        "recall_potable": 0.0,
+        "false_potable": 0,
+        "false_not_potable": 1022
+      },
+      {
+        "threshold": 0.7,
+        "n_predicted_potable": 0,
+        "precision_potable": 0.0,
+        "recall_potable": 0.0,
+        "false_potable": 0,
+        "false_not_potable": 1022
+      },
+      {
+        "threshold": 0.75,
+        "n_predicted_potable": 0,
+        "precision_potable": 0.0,
+        "recall_potable": 0.0,
+        "false_potable": 0,
+        "false_not_potable": 1022
+      },
+      {
+        "threshold": 0.8,
+        "n_predicted_potable": 0,
+        "precision_potable": 0.0,
+        "recall_potable": 0.0,
+        "false_potable": 0,
+        "false_not_potable": 1022
+      },
+      {
+        "threshold": 0.85,
+        "n_predicted_potable": 0,
+        "precision_potable": 0.0,
+        "recall_potable": 0.0,
+        "false_potable": 0,
+        "false_not_potable": 1022
+      },
+      {
+        "threshold": 0.9,
+        "n_predicted_potable": 0,
+        "precision_potable": 0.0,
+        "recall_potable": 0.0,
+        "false_potable": 0,
+        "false_not_potable": 1022
+      }
+    ],
     "test_accuracy": 0.524390243902439,
     "test_macro_f1": 0.5185909980430528,
     "test_weighted_f1": 0.5301894897618252,
@@ -137,6 +1576,16 @@
     "test_recall_class_1": 0.53125,
     "test_f1_class_0": 0.5714285714285714,
     "test_f1_class_1": 0.4657534246575342,
+    "test_accuracy_ci95": [
+      0.48614307150887437,
+      0.5623534265048353
+    ],
+    "test_precision_class_1_ci95": [
+      0.3626066626000624,
+      0.468638052304497
+    ],
+    "test_n_predicted_potable": 328,
+    "test_false_potable_rate": 0.48,
     "confusion_matrix": [
       [
         208,
@@ -157,6 +1606,24 @@
     "actual_not_potable_pred_potable": 192,
     "actual_potable_pred_not_potable": 120,
     "actual_potable_pred_potable": 136,
+    "test_classification_report": "                 precision    recall  f1-score   support\n\n0 = Not Potable     0.6341    0.5200    0.5714       400\n    1 = Potable     0.4146    0.5312    0.4658       256\n\n       accuracy                         0.5244       656\n      macro avg     0.5244    0.5256    0.5186       656\n   weighted avg     0.5485    0.5244    0.5302       656\n",
+    "test_native_accuracy": 0.524390243902439,
+    "test_native_macro_f1": 0.5185909980430528,
+    "test_native_weighted_f1": 0.5301894897618252,
+    "test_native_precision_class_0": 0.6341463414634146,
+    "test_native_precision_class_1": 0.4146341463414634,
+    "test_native_recall_class_0": 0.52,
+    "test_native_recall_class_1": 0.53125,
+    "test_native_confusion_matrix": [
+      [
+        208,
+        192
+      ],
+      [
+        120,
+        136
+      ]
+    ],
     "model_name": "Logistic_Regression"
   },
   "Baseline_Majority": {
@@ -166,8 +1633,43 @@
     "cv_macro_f1_std": 0.0003608002971834775,
     "cv_weighted_f1_mean": 0.46214267379981167,
     "cv_weighted_f1_std": 0.0011482389039407632,
+    "cv_precision_class_0_mean": 0.6099236641221374,
+    "cv_precision_class_0_std": 0.0009349197491538728,
+    "cv_precision_class_1_mean": 0.0,
+    "cv_precision_class_1_std": 0.0,
+    "cv_recall_class_0_mean": 1.0,
+    "cv_recall_class_0_std": 0.0,
+    "cv_recall_class_1_mean": 0.0,
+    "cv_recall_class_1_std": 0.0,
+    "cv_f1_class_0_mean": 0.7577046544444632,
+    "cv_f1_class_0_std": 0.000721600594366955,
+    "cv_f1_class_1_mean": 0.0,
+    "cv_f1_class_1_std": 0.0,
     "train_accuracy_mean": 0.6099236641221374,
     "train_accuracy_std": 0.00023372993728850897,
+    "cv_macro_f1_folds": [
+      0.3791469194312796,
+      0.3791469194312796,
+      0.3791469194312796,
+      0.37841043890865955,
+      0.37841043890865955
+    ],
+    "cv_accuracy_folds": [
+      0.6106870229007634,
+      0.6106870229007634,
+      0.6106870229007634,
+      0.6087786259541985,
+      0.6087786259541985
+    ],
+    "cv_method": "nested stratified CV (outer folds), native decision rule",
+    "hyperparameters": {},
+    "decision_threshold": null,
+    "decision_rule": "native decision rule of the model",
+    "threshold_target_met": false,
+    "oof_threshold_precision_potable": null,
+    "oof_threshold_recall_potable": null,
+    "oof_threshold_n_predicted_potable": null,
+    "oof_threshold_curve": [],
     "test_accuracy": 0.6097560975609756,
     "test_macro_f1": 0.3787878787878788,
     "test_weighted_f1": 0.4619364375461936,
@@ -177,6 +1679,16 @@
     "test_recall_class_1": 0.0,
     "test_f1_class_0": 0.7575757575757576,
     "test_f1_class_1": 0.0,
+    "test_accuracy_ci95": [
+      0.5718918019140047,
+      0.6463424391476884
+    ],
+    "test_precision_class_1_ci95": [
+      null,
+      null
+    ],
+    "test_n_predicted_potable": 0,
+    "test_false_potable_rate": 0.0,
     "confusion_matrix": [
       [
         400,
@@ -197,6 +1709,24 @@
     "actual_not_potable_pred_potable": 0,
     "actual_potable_pred_not_potable": 256,
     "actual_potable_pred_potable": 0,
+    "test_classification_report": "                 precision    recall  f1-score   support\n\n0 = Not Potable     0.6098    1.0000    0.7576       400\n    1 = Potable     0.0000    0.0000    0.0000       256\n\n       accuracy                         0.6098       656\n      macro avg     0.3049    0.5000    0.3788       656\n   weighted avg     0.3718    0.6098    0.4619       656\n",
+    "test_native_accuracy": 0.6097560975609756,
+    "test_native_macro_f1": 0.3787878787878788,
+    "test_native_weighted_f1": 0.4619364375461936,
+    "test_native_precision_class_0": 0.6097560975609756,
+    "test_native_precision_class_1": 0.0,
+    "test_native_recall_class_0": 1.0,
+    "test_native_recall_class_1": 0.0,
+    "test_native_confusion_matrix": [
+      [
+        400,
+        0
+      ],
+      [
+        256,
+        0
+      ]
+    ],
     "model_name": "Baseline_Majority"
   }
 }

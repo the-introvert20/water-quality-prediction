@@ -1,0 +1,614 @@
+{
+  "generated": "2026-11-04T12:04:32",
+  "config": {
+    "outer_splits": 5,
+    "inner_splits": 5,
+    "rf_trees": 200,
+    "et_trees": 200,
+    "xgb_estimators": 200,
+    "grids": {
+      "Random_Forest": {
+        "max_depth": [
+          5,
+          10,
+          15
+        ],
+        "min_samples_leaf": [
+          1,
+          3,
+          5
+        ]
+      },
+      "SVC": {
+        "C": [
+          0.5,
+          1,
+          2,
+          4
+        ],
+        "gamma": [
+          0.05,
+          0.1,
+          0.2
+        ]
+      },
+      "Extra_Trees": {
+        "min_samples_leaf": [
+          5,
+          10,
+          20
+        ]
+      }
+    },
+    "target_precision": 0.7,
+    "min_predicted_potable": 50
+  },
+  "split": {
+    "train_size": 2620,
+    "test_size": 656,
+    "train_class_counts": {
+      "0": 1598,
+      "1": 1022
+    },
+    "test_class_counts": {
+      "0": 400,
+      "1": 256
+    }
+  },
+  "selection": {
+    "selected_model": "Soft_Voting_RF_SVC",
+    "selection_metric": "nested-CV Macro F1 (mean over outer folds)",
+    "ranking": [
+      {
+        "model": "Soft_Voting_RF_SVC",
+        "cv_macro_f1_mean": 0.6397872523433653,
+        "cv_macro_f1_std": 0.022488332957695936
+      },
+      {
+        "model": "SVC",
+        "cv_macro_f1_mean": 0.6397438857625078,
+        "cv_macro_f1_std": 0.011102122397599818
+      },
+      {
+        "model": "Random_Forest",
+        "cv_macro_f1_mean": 0.6329631470218814,
+        "cv_macro_f1_std": 0.0096960939673109
+      },
+      {
+        "model": "Extra_Trees",
+        "cv_macro_f1_mean": 0.6281850726839507,
+        "cv_macro_f1_std": 0.021015886318869435
+      },
+      {
+        "model": "XGBoost",
+        "cv_macro_f1_mean": 0.6075218649640611,
+        "cv_macro_f1_std": 0.0124267170678739
+      },
+      {
+        "model": "Decision_Tree",
+        "cv_macro_f1_mean": 0.5835697812878792,
+        "cv_macro_f1_std": 0.033206388770439244
+      },
+      {
+        "model": "Logistic_Regression",
+        "cv_macro_f1_mean": 0.48490719150616,
+        "cv_macro_f1_std": 0.01734624852289197
+      }
+    ],
+    "paired_comparisons_vs_selected": [
+      {
+        "model": "SVC",
+        "mean_difference": 4.336658085744016e-05,
+        "std_difference": 0.015150783764690458,
+        "t": 0.00426691337139365,
+        "p_value": 0.9967998271097983,
+        "folds_a_better": 3,
+        "folds": 5
+      },
+      {
+        "model": "Random_Forest",
+        "mean_difference": 0.006824105321484008,
+        "std_difference": 0.019818054982718953,
+        "t": 0.5133084754537234,
+        "p_value": 0.6347860831043294,
+        "folds_a_better": 2,
+        "folds": 5
+      },
+      {
+        "model": "Extra_Trees",
+        "mean_difference": 0.011602179659414614,
+        "std_difference": 0.018642115076320433,
+        "t": 0.9277653420549924,
+        "p_value": 0.40604312201198217,
+        "folds_a_better": 4,
+        "folds": 5
+      },
+      {
+        "model": "XGBoost",
+        "mean_difference": 0.03226538737930431,
+        "std_difference": 0.024333834582740268,
+        "t": 1.9766058449788197,
+        "p_value": 0.11926397473994217,
+        "folds_a_better": 5,
+        "folds": 5
+      },
+      {
+        "model": "Decision_Tree",
+        "mean_difference": 0.056217471055486155,
+        "std_difference": 0.03748692328791015,
+        "t": 2.235554441882496,
+        "p_value": 0.08906007824894496,
+        "folds_a_better": 5,
+        "folds": 5
+      },
+      {
+        "model": "Logistic_Regression",
+        "mean_difference": 0.1548800608372053,
+        "std_difference": 0.025054051844056978,
+        "t": 9.215338276004099,
+        "p_value": 0.0007704762846168161,
+        "folds_a_better": 5,
+        "folds": 5
+      }
+    ],
+    "selected_distinguishable_from_runner_up": false,
+    "justification": [
+      "Soft voting (RF + SVC) has the highest nested-CV Macro F1 (0.6398 +/- 0.0225) among the 7 saved candidates; it was chosen on validation folds only.",
+      "Margin over the runner-up (SVC (RBF)): +0.0000 Macro F1 (fold-to-fold SD of the difference 0.0152; corrected paired t-test p = 0.997).",
+      "This margin is NOT distinguishable from chance: the corrected paired test gives p >= 0.05. The selected model is the best point estimate, not a demonstrably better model.",
+      "Candidates not statistically distinguishable from the selected model: SVC (RBF), Random Forest, Extra Trees, XGBoost, Decision Tree."
+    ]
+  },
+  "nested_fold_scores": {
+    "Random_Forest": {
+      "macro_f1": [
+        0.641620678269893,
+        0.6341110430620516,
+        0.6187386947950329,
+        0.6447042319382745,
+        0.6256410870441547
+      ],
+      "accuracy": [
+        0.6679389312977099,
+        0.6583969465648855,
+        0.6583969465648855,
+        0.6679389312977099,
+        0.6583969465648855
+      ]
+    },
+    "SVC": {
+      "macro_f1": [
+        0.6344378620681681,
+        0.6423235168780429,
+        0.6287294179258507,
+        0.6601375016214814,
+        0.6330911303189963
+      ],
+      "accuracy": [
+        0.6545801526717557,
+        0.6545801526717557,
+        0.648854961832061,
+        0.666030534351145,
+        0.6507633587786259
+      ]
+    },
+    "Extra_Trees": {
+      "macro_f1": [
+        0.6153077163386442,
+        0.6504636221430773,
+        0.6128791322984997,
+        0.6565782844067629,
+        0.6056966082327695
+      ],
+      "accuracy": [
+        0.6412213740458015,
+        0.6736641221374046,
+        0.6526717557251909,
+        0.6698473282442748,
+        0.6393129770992366
+      ]
+    },
+    "Soft_Voting_RF_SVC": {
+      "macro_f1": [
+        0.6344974233886139,
+        0.6298954341754888,
+        0.6324660324660325,
+        0.683411556174403,
+        0.6186658155122885
+      ],
+      "accuracy": [
+        0.6851145038167938,
+        0.6679389312977099,
+        0.6812977099236641,
+        0.7118320610687023,
+        0.6736641221374046
+      ]
+    },
+    "XGBoost": {
+      "macro_f1": [
+        0.5866604186191815,
+        0.6226356335665097,
+        0.6068862039011292,
+        0.6173359571982043,
+        0.6040911115352803
+      ],
+      "accuracy": [
+        0.6145038167938931,
+        0.6469465648854962,
+        0.6374045801526718,
+        0.6374045801526718,
+        0.6374045801526718
+      ]
+    },
+    "Decision_Tree": {
+      "macro_f1": [
+        0.6116704101061465,
+        0.5893806990881459,
+        0.6078086419753086,
+        0.5892195820830968,
+        0.519769573186698
+      ],
+      "accuracy": [
+        0.6278625954198473,
+        0.6221374045801527,
+        0.6297709923664122,
+        0.6125954198473282,
+        0.5458015267175572
+      ]
+    },
+    "Logistic_Regression": {
+      "macro_f1": [
+        0.47200791222192895,
+        0.49884021326883965,
+        0.5026186780421892,
+        0.49362535678973196,
+        0.45744379720811046
+      ],
+      "accuracy": [
+        0.48282442748091603,
+        0.5019083969465649,
+        0.5133587786259542,
+        0.5057251908396947,
+        0.46946564885496184
+      ]
+    },
+    "Baseline_Majority": {
+      "macro_f1": [
+        0.3791469194312796,
+        0.3791469194312796,
+        0.3791469194312796,
+        0.37841043890865955,
+        0.37841043890865955
+      ],
+      "accuracy": [
+        0.6106870229007634,
+        0.6106870229007634,
+        0.6106870229007634,
+        0.6087786259541985,
+        0.6087786259541985
+      ]
+    }
+  },
+  "nested_selected_params": {
+    "Random_Forest": [
+      {
+        "max_depth": 15,
+        "min_samples_leaf": 3
+      },
+      {
+        "max_depth": 15,
+        "min_samples_leaf": 1
+      },
+      {
+        "max_depth": 10,
+        "min_samples_leaf": 1
+      },
+      {
+        "max_depth": 10,
+        "min_samples_leaf": 1
+      },
+      {
+        "max_depth": 15,
+        "min_samples_leaf": 3
+      }
+    ],
+    "SVC": [
+      {
+        "C": 4,
+        "gamma": 0.05
+      },
+      {
+        "C": 1,
+        "gamma": 0.2
+      },
+      {
+        "C": 0.5,
+        "gamma": 0.2
+      },
+      {
+        "C": 1,
+        "gamma": 0.2
+      },
+      {
+        "C": 2,
+        "gamma": 0.1
+      }
+    ],
+    "Extra_Trees": [
+      {
+        "min_samples_leaf": 5
+      },
+      {
+        "min_samples_leaf": 5
+      },
+      {
+        "min_samples_leaf": 5
+      },
+      {
+        "min_samples_leaf": 10
+      },
+      {
+        "min_samples_leaf": 5
+      }
+    ],
+    "Soft_Voting_RF_SVC": [
+      {
+        "Random_Forest": {
+          "max_depth": 15,
+          "min_samples_leaf": 3
+        },
+        "SVC": {
+          "C": 4,
+          "gamma": 0.05
+        }
+      },
+      {
+        "Random_Forest": {
+          "max_depth": 15,
+          "min_samples_leaf": 1
+        },
+        "SVC": {
+          "C": 1,
+          "gamma": 0.2
+        }
+      },
+      {
+        "Random_Forest": {
+          "max_depth": 10,
+          "min_samples_leaf": 1
+        },
+        "SVC": {
+          "C": 0.5,
+          "gamma": 0.2
+        }
+      },
+      {
+        "Random_Forest": {
+          "max_depth": 10,
+          "min_samples_leaf": 1
+        },
+        "SVC": {
+          "C": 1,
+          "gamma": 0.2
+        }
+      },
+      {
+        "Random_Forest": {
+          "max_depth": 15,
+          "min_samples_leaf": 3
+        },
+        "SVC": {
+          "C": 2,
+          "gamma": 0.1
+        }
+      }
+    ],
+    "XGBoost": [
+      {},
+      {},
+      {},
+      {},
+      {}
+    ],
+    "Decision_Tree": [
+      {},
+      {},
+      {},
+      {},
+      {}
+    ],
+    "Logistic_Regression": [
+      {},
+      {},
+      {},
+      {},
+      {}
+    ],
+    "Baseline_Majority": [
+      {},
+      {},
+      {},
+      {},
+      {}
+    ]
+  },
+  "threshold_policy": {
+    "target_potable_precision": 0.7,
+    "min_predicted_potable": 50,
+    "grid": [
+      0.3,
+      0.35,
+      0.4,
+      0.45,
+      0.5,
+      0.55,
+      0.6,
+      0.65,
+      0.7,
+      0.75,
+      0.8,
+      0.85,
+      0.9
+    ],
+    "rule": "lowest threshold on out-of-fold TRAINING predictions whose Potable precision >= target"
+  },
+  "before_after": [
+    {
+      "model": "Random_Forest",
+      "in_original_run": true,
+      "before_cv_macro_f1": 0.6274699755322202,
+      "after_cv_macro_f1": 0.6329631470218814,
+      "before_test_accuracy": 0.6570121951219512,
+      "after_test_accuracy": 0.6646341463414634,
+      "after_test_accuracy_native": 0.6570121951219512,
+      "before_test_macro_f1": 0.6245106045226629,
+      "after_test_macro_f1": 0.5599141295862607,
+      "after_test_macro_f1_native": 0.630733204740425,
+      "before_test_precision_potable": 0.5748792270531401,
+      "after_test_precision_potable": 0.725,
+      "before_test_recall_potable": 0.46484375,
+      "after_test_recall_potable": 0.2265625,
+      "before_false_potable": 88,
+      "after_false_potable": 22
+    },
+    {
+      "model": "SVC",
+      "in_original_run": false,
+      "before_cv_macro_f1": null,
+      "after_cv_macro_f1": 0.6397438857625078,
+      "before_test_accuracy": null,
+      "after_test_accuracy": 0.6539634146341463,
+      "after_test_accuracy_native": 0.6219512195121951,
+      "before_test_macro_f1": null,
+      "after_test_macro_f1": 0.5237665780796772,
+      "after_test_macro_f1_native": 0.6022492787638747,
+      "before_test_precision_potable": null,
+      "after_test_precision_potable": 0.7543859649122807,
+      "before_test_recall_potable": null,
+      "after_test_recall_potable": 0.16796875,
+      "before_false_potable": null,
+      "after_false_potable": 14
+    },
+    {
+      "model": "Extra_Trees",
+      "in_original_run": false,
+      "before_cv_macro_f1": null,
+      "after_cv_macro_f1": 0.6281850726839507,
+      "before_test_accuracy": null,
+      "after_test_accuracy": 0.6600609756097561,
+      "after_test_accuracy_native": 0.6417682926829268,
+      "before_test_macro_f1": null,
+      "after_test_macro_f1": 0.5598600342392596,
+      "after_test_macro_f1_native": 0.608586916504805,
+      "before_test_precision_potable": null,
+      "after_test_precision_potable": 0.6896551724137931,
+      "before_test_recall_potable": null,
+      "after_test_recall_potable": 0.234375,
+      "before_false_potable": null,
+      "after_false_potable": 27
+    },
+    {
+      "model": "Soft_Voting_RF_SVC",
+      "in_original_run": false,
+      "before_cv_macro_f1": null,
+      "after_cv_macro_f1": 0.6397872523433653,
+      "before_test_accuracy": null,
+      "after_test_accuracy": 0.6707317073170732,
+      "after_test_accuracy_native": 0.6585365853658537,
+      "before_test_macro_f1": null,
+      "after_test_macro_f1": 0.5907531279243059,
+      "after_test_macro_f1_native": 0.6097229304776475,
+      "before_test_precision_potable": null,
+      "after_test_precision_potable": 0.6818181818181818,
+      "before_test_recall_potable": null,
+      "after_test_recall_potable": 0.29296875,
+      "before_false_potable": null,
+      "after_false_potable": 35
+    },
+    {
+      "model": "XGBoost",
+      "in_original_run": true,
+      "before_cv_macro_f1": 0.6005115955491788,
+      "after_cv_macro_f1": 0.6075218649640611,
+      "before_test_accuracy": 0.6173780487804879,
+      "after_test_accuracy": 0.6173780487804879,
+      "after_test_accuracy_native": 0.6173780487804879,
+      "before_test_macro_f1": 0.582742673238473,
+      "after_test_macro_f1": 0.582742673238473,
+      "after_test_macro_f1_native": 0.582742673238473,
+      "before_test_precision_potable": 0.5118483412322274,
+      "after_test_precision_potable": 0.5118483412322274,
+      "before_test_recall_potable": 0.421875,
+      "after_test_recall_potable": 0.421875,
+      "before_false_potable": 103,
+      "after_false_potable": 103
+    },
+    {
+      "model": "Decision_Tree",
+      "in_original_run": true,
+      "before_cv_macro_f1": 0.5835697812878792,
+      "after_cv_macro_f1": 0.5835697812878792,
+      "before_test_accuracy": 0.6067073170731707,
+      "after_test_accuracy": 0.6067073170731707,
+      "after_test_accuracy_native": 0.6067073170731707,
+      "before_test_macro_f1": 0.5655093804873541,
+      "after_test_macro_f1": 0.5655093804873541,
+      "after_test_macro_f1_native": 0.5655093804873541,
+      "before_test_precision_potable": 0.494949494949495,
+      "after_test_precision_potable": 0.494949494949495,
+      "before_test_recall_potable": 0.3828125,
+      "after_test_recall_potable": 0.3828125,
+      "before_false_potable": 100,
+      "after_false_potable": 100
+    },
+    {
+      "model": "Logistic_Regression",
+      "in_original_run": true,
+      "before_cv_macro_f1": 0.48490719150616,
+      "after_cv_macro_f1": 0.48490719150616,
+      "before_test_accuracy": 0.524390243902439,
+      "after_test_accuracy": 0.524390243902439,
+      "after_test_accuracy_native": 0.524390243902439,
+      "before_test_macro_f1": 0.5185909980430528,
+      "after_test_macro_f1": 0.5185909980430528,
+      "after_test_macro_f1_native": 0.5185909980430528,
+      "before_test_precision_potable": 0.4146341463414634,
+      "after_test_precision_potable": 0.4146341463414634,
+      "before_test_recall_potable": 0.53125,
+      "after_test_recall_potable": 0.53125,
+      "before_false_potable": 192,
+      "after_false_potable": 192
+    },
+    {
+      "model": "Baseline_Majority",
+      "in_original_run": true,
+      "before_cv_macro_f1": 0.3788523272222316,
+      "after_cv_macro_f1": 0.3788523272222316,
+      "before_test_accuracy": 0.6097560975609756,
+      "after_test_accuracy": 0.6097560975609756,
+      "after_test_accuracy_native": 0.6097560975609756,
+      "before_test_macro_f1": 0.3787878787878788,
+      "after_test_macro_f1": 0.3787878787878788,
+      "after_test_macro_f1_native": 0.3787878787878788,
+      "before_test_precision_potable": 0.0,
+      "after_test_precision_potable": 0.0,
+      "before_test_recall_potable": 0.0,
+      "after_test_recall_potable": 0.0,
+      "before_false_potable": 0,
+      "after_false_potable": 0
+    }
+  ],
+  "change_statement": "Versus the original Random Forest (0.6275 CV Macro F1, 0.6245 test Macro F1, 0.6570 test accuracy), the selected Soft voting (RF + SVC): CV Macro F1 +0.0123 (did not change meaningfully relative to its fold SD 0.0225); test Macro F1 -0.0148 under its native rule and -0.0338 under the deployed safety threshold; test accuracy +0.0137 (deployed). Test records labelled Not Potable predicted Potable: 88 originally, 35 now. Differences of about one fold standard deviation or less (and a single 656-record test split) are not evidence of real improvement.",
+  "versions": {
+    "python": "3.14.6",
+    "scikit_learn": "1.9.0",
+    "xgboost": "3.3.0",
+    "pandas": "3.0.5",
+    "numpy": "2.5.1"
+  },
+  "dataset": {
+    "path": "dataset/water_potability.csv",
+    "sha256": "111a9ba65f2d791003ac07b54b8e18e2f7e0bc1cfa37cfdb251d3758a4e8c24c",
+    "rows": 3276
+  }
+}

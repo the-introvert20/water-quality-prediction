@@ -15,7 +15,8 @@ from train_model import treat_zero_ph_as_missing
 BASE_DIR = Path(__file__).resolve().parent
 FEATURES = ['ph', 'Hardness', 'Solids', 'Chloramines', 'Sulfate',
             'Conductivity', 'Organic_carbon', 'Trihalomethanes', 'Turbidity']
-MODEL_NAMES = ['Random_Forest', 'XGBoost', 'Decision_Tree', 'Logistic_Regression']
+MODEL_NAMES = ['Random_Forest', 'SVC', 'Extra_Trees', 'Soft_Voting_RF_SVC',
+               'XGBoost', 'Decision_Tree', 'Logistic_Regression']
 CLASS_LABELS = {0: '0 = Not Potable', 1: '1 = Potable'}
 CLASS_NAMES = {0: 'Not Potable', 1: 'Potable'}
 DISCLAIMER = (
@@ -51,6 +52,13 @@ def load_pipeline(model_name):
     if list(pipeline.feature_names_in_) != FEATURES or set(pipeline.classes_) != {0, 1}:
         raise ValueError('Pipeline features or target classes do not match the application schema.')
     return pipeline
+
+
+def decision_threshold(pipeline):
+    """Return the Potable-probability threshold used by ``pipeline.predict`` (None = native rule)."""
+    classifier = getattr(pipeline, 'named_steps', {}).get('classifier')
+    threshold = getattr(classifier, 'threshold', None)
+    return float(threshold) if threshold is not None else None
 
 
 def validate_features(frame: pd.DataFrame) -> pd.DataFrame:
@@ -154,11 +162,14 @@ def reference_checks(frame):
     return flags
 
 
-def prediction_report(frame, prediction, probabilities, model_name):
+def prediction_report(frame, prediction, probabilities, model_name, threshold=None):
     lines = ['WATER QUALITY INTELLIGENCE | PREDICTION REPORT',
              f'Generated: {datetime.now().isoformat(timespec="seconds")}',
-             f'Model: {model_name}', f'Predicted class: {CLASS_LABELS[int(prediction)]}',
-             '', 'INPUT MEASUREMENTS (as submitted):']
+             f'Model: {model_name}', f'Predicted class: {CLASS_LABELS[int(prediction)]}']
+    if threshold is not None:
+        lines.append(f'Decision rule: Potable only if P(Potable) >= {threshold:.2f} '
+                     '(chosen from out-of-fold training predictions to limit false Potable predictions).')
+    lines.extend(['', 'INPUT MEASUREMENTS (as submitted):'])
     for name in FEATURES:
         value = frame.iloc[0][name]
         lines.append(f'  {name}: {"missing" if pd.isna(value) else value}')

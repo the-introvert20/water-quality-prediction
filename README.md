@@ -112,3 +112,8 @@ The exported `batch_predictions.csv` includes all uploaded rows alongside:
 - **Statistical Margin of Error:** Differences between top-performing ensemble models fall within one cross-validation standard deviation.
 - **Threshold Trade-offs:** Prioritizing high precision for Potable classifications reduces false positives at the expense of lower Potable recall.
 - **Educational Prototype:** This platform is an educational machine learning demonstrator. It must never replace certified laboratory testing or drinking-water regulatory compliance evaluations.
+
+
+
+## FOR LIVE DEMO
+- LIVE : https://the-introvert20-water-quality-prediction-app-i0t8k5.streamlit.app/
